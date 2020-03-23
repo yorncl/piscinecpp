@@ -1,9 +1,9 @@
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 
-NAME = megaphone
+NAME = phonebook
 
-SRCS = megaphone.cpp
+SRCS = Contact.cpp Main.cpp
 
 all: $(NAME)
 
