@@ -14,22 +14,22 @@ void	getField(std::string *p, std::string label, bool mandatory = false)
 
 int		main(void)
 {
-	std::string	command;
+	std::string	buff;
 	Contact* book[8];
-	size_t nb = 0;
-	size_t index = 0;
+	int nb = 0;
+	int index = 0;
 
 	std::cout << "\e[32;1mWelcome to Phonebook3000 !\e[0m" << std::endl;
 	while (1)
 	{
 		std::cout << "Please enter a valid command (ADD, SEARCH, EXIT)" << std::endl;
-		std::getline(std::cin, command);;
-		if (command.compare("EXIT") == 0)
+		std::getline(std::cin, buff);
+		if (buff.compare("EXIT") == 0)
 		{
 			std::cout << "\e[32;1mGoodbye !\e[0m" << std::endl;
 			break;
 		}
-		else if (command.compare("ADD") == 0)
+		else if (buff.compare("ADD") == 0)
 		{
 			if (nb < 8)
 			{
@@ -44,12 +44,14 @@ int		main(void)
 				getField(&book[nb]->birth, "Birth date");
 				getField(&book[nb]->meal, "Favorite meal");
 				getField(&book[nb]->underwear, "Underwear color");
+				getField(&book[nb]->secret, "Darkest secret");
 				nb++;
+				std::cout << "\e[32;1mContact added !\e[0m" << std::endl;
 			}
 			else
 				std::cout << "Phonebook is full !" << std::endl;
 		}
-		else if (command.compare("SEARCH") == 0)
+		else if (buff.compare("SEARCH") == 0)
 		{
 			if (nb == 0)
 				std::cout << "Phonebook is empty !" << std::endl;
@@ -57,7 +59,7 @@ int		main(void)
 			{
 				std::cout << "     index|     first|      last|    pseudo" << std::endl;
 				std::cout << std::string(43, '-') << std::endl;
-				for (size_t i = 0; i < nb; i++)
+				for (int i = 0; i < nb; i++)
 				{
 					std::cout << std::setw(10) << i << "|";
 					std::cout << std::setw(10) << (book[i]->first.size() > 10 ? book[i]->first.substr(0, 9) + '.' : book[i]->first) << "|";
@@ -67,8 +69,15 @@ int		main(void)
 				do
 				{
 					std::cout << "Please enter a valid index" << std::endl;
-					std::cin >> index;
+					if (!(std::cin >> index))
+					{
+						std::cout << "ERROR" << std::endl;
+						index = -1;
+					}
+					std::cin.clear();
+					std::cin.ignore(10000, '\n');
 				} while (index < 0 || index >= nb);
+				std::cout << "---------- Contact " << index << " ----------" << std::endl;
 				book[index]->print();
 			}	
 		}
