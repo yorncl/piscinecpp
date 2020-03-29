@@ -28,9 +28,9 @@ public:
 	Fixed operator/(const Fixed &);
 	Fixed operator*(const Fixed &);
 	Fixed &operator--();
-	Fixed &operator--(int);
+	Fixed operator--(int);
 	Fixed &operator++();
-	Fixed &operator++(int);
+	Fixed operator++(int);
 	~Fixed();
 	int getRawBits(void) const;
 	void setRawBits(int const raw);

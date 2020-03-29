@@ -78,9 +78,9 @@ Fixed Fixed::operator/(const Fixed &f) { return Fixed(this->toFloat() / f.toFloa
 Fixed Fixed::operator*(const Fixed &f) { return Fixed(this->toFloat() * f.toFloat()); };
 
 Fixed& Fixed::operator--(){this->value--;return *this;};
-Fixed& Fixed::operator--(int){Fixed r(*this);this->value--;return r;};
+Fixed Fixed::operator--(int){Fixed r(*this);this->value--;return r;};
 Fixed& Fixed::operator++(){this->value++;return *this;};
-Fixed& Fixed::operator++(int){Fixed r(*this);this->value++;return r;};
+Fixed Fixed::operator++(int){Fixed r(*this);this->value++;return r;};
 
 Fixed& Fixed::min(Fixed &a, Fixed &b)
 {
