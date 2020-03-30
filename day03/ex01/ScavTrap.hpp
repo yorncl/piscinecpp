@@ -1,10 +1,10 @@
-#if !defined(FRAGTRAP_HPP)
-#define FRAGTRAP_HPP
+#if !defined(SCAVTRAP_HPP)
+#define SCAVTRAP_HPP
 
 #include <iostream>
 #include <string>
 
-class FragTrap
+class ScavTrap
 {
 private:
 	int hit;
@@ -18,15 +18,17 @@ private:
 	int armor;
 
 public:
-	FragTrap(std::string);
-	FragTrap(const FragTrap &) = default;
-	FragTrap &operator=(const FragTrap &) = default;
-	~FragTrap();
+	ScavTrap(std::string);
+	ScavTrap(ScavTrap &&) = default;
+	ScavTrap(const ScavTrap &) = default;
+	ScavTrap &operator=(ScavTrap &&) = default;
+	ScavTrap &operator=(const ScavTrap &) = default;
+	~ScavTrap();
 	void rangedAttack(std::string const &target);
 	void meleeAttack(std::string const &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	void addEnergy(int amount);
-	void vaulthunter_dot_exe(std::string const & target);
+	void challengeNewcomer();
 };
-#endif // FRAGTRAP_HPP
+#endif // SCAVTRAP_HPP
