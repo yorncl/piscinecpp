@@ -18,17 +18,17 @@ NinjaTrap::~NinjaTrap()
 	std::cout << "NINJA-TP " << name << " is desructed!" << std::endl;
 }
 
-void ninjaShoebox(ScavTrap& s)
+void NinjaTrap::ninjaShoebox(ScavTrap& s)
 {
 	s.takeDamage(10);
 	std::cout << "NINJA-TP - Get Scavtrapped!" << std::endl;
 };
-void ninjaShoebox(FragTrap& f)
+void NinjaTrap::ninjaShoebox(FragTrap& f)
 {
 	f.takeDamage(10);
 	std::cout << "NINJA-TP - Get Fragtrapped!" << std::endl;
 };
-void ninjaShoebox(NinjaTrap& n)
+void NinjaTrap::ninjaShoebox(NinjaTrap& n)
 {
 	n.takeDamage(10);
 	std::cout << "NINJA-TP - bruh, we're on the same team >:[" << std::endl;

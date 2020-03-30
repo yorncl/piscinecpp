@@ -2,13 +2,13 @@
 
 ClapTrap::ClapTrap(std::string n)
 {
-	std::cout << "CLAP-TP" << name << " is born!" << std::endl;
 	name = n;
+	std::cout << "CLAP-TP " << name << " is born!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "CLAP-TP" << name << " is desructed!" << std::endl;
+	std::cout << "CLAP-TP " << name << " is desructed!" << std::endl;
 }
 
 void ClapTrap::addEnergy(int amount)
