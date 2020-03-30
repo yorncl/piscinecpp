@@ -13,6 +13,10 @@ FragTrap::FragTrap(std::string n)
 	armor = 5;
 }
 
+FragTrap::~FragTrap()
+{
+}
+
 void FragTrap::addEnergy(int amount)
 {
 	energy += amount;
@@ -50,8 +54,6 @@ void FragTrap::meleeAttack(std::string const &target)
 
 void FragTrap::takeDamage(unsigned int amount)
 {
-	int lostHP;
-
 	int oof = amount;
 	oof -= armor;
 	if (oof > 0)
@@ -60,7 +62,7 @@ void FragTrap::takeDamage(unsigned int amount)
 		if (hit < 0)
 		{
 			hit = 0;
-			std::cout << "FR4G-TP " << name << " is, well, kinda dead" << std::endl;
+			std::cout << "FR4G-TP " << name << " just got beaten up to death!" << std::endl;
 		}
 		else
 			std::cout << "FR4G-TP " << name << " takes " << amount << " damages, losing " << oof << " points of HP!" << std::endl;
@@ -76,6 +78,7 @@ void FragTrap::beRepaired(unsigned int amount)
 	{
 		hit = maxHit;
 	}
+	std::cout << "FR4G-TP " << name << " is now " << hit << " HP!" << std::endl;
 };
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
