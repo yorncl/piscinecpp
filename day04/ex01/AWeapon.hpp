@@ -6,13 +6,13 @@
 class AWeapon
 {
 private:
-	const std::string name;
-	const int apcost;
-	const int damage;
+	std::string const name;
+	int const apcost;
+	int const damage;
 public:
 	AWeapon(std::string const &name, int apcost, int damage);
 	virtual ~AWeapon();
-	std::string getName() const;
+	std::string const getName() const;
 	int getAPCost() const;
 	int getDamage() const;
 	virtual void attack() const = 0;

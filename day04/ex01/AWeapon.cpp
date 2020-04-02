@@ -4,7 +4,11 @@ AWeapon::AWeapon(std::string const &name, int apcost, int damage) : name(name), 
 {
 }
 
-std::string AWeapon::getName() const
+AWeapon::~AWeapon()
+{
+}
+
+std::string const AWeapon::getName() const
 {
 	return name;
 }
