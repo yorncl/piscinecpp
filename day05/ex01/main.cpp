@@ -98,7 +98,8 @@ int main(void)
 	{
 		std::cerr << e.what() << '\n';
 	}
-
+	std::cout << "f3 Before " << f3.getSigned() << std::endl;
 	b.signForm(f3);
+	std::cout << "f3 After " << f3.getSigned() << std::endl;
 	return 0;
 }
