@@ -1,0 +1,49 @@
+
+#include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat(std::string n, int g) : name(n)
+{
+	if (g < 1)
+		throw GradeTooLowException();
+	if (g > 150)
+		throw GradeTooHighException();
+	grade = g;
+}
+
+Bureaucrat::~Bureaucrat()
+{
+}
+
+std::string Bureaucrat::getName() const
+{
+	return name;
+}
+
+int Bureaucrat::getGrade() const
+{
+	return grade;
+}
+
+void Bureaucrat::inc()
+{
+	grade--;
+	if (grade < 1)
+		throw GradeTooLowException();
+	if (grade > 150)
+		throw GradeTooHighException();
+}
+
+void Bureaucrat::dec()
+{
+	grade++;
+	if (grade < 1)
+		throw GradeTooLowException();
+	if (grade > 150)
+		throw GradeTooHighException();
+}
+
+std::ostream& operator<<(std::ostream& os, Bureaucrat& b)
+{
+	os << b.getName() << ", bureaucrat grade " << b.getGrade();
+	return os;
+}
