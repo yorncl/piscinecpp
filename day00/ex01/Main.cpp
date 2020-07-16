@@ -5,9 +5,10 @@
 
 void	getField(std::string *p, std::string label, bool mandatory = false)
 {
-	std::cout << label <<" ?" << std::endl;
 	do
 	{
+		std::cout << label <<" ?" << std::endl;
+		std::cin.clear();
 		std::getline(std::cin, *p);
 	} while (p->size() == 0 && mandatory);
 }
@@ -22,8 +23,12 @@ int		main(void)
 	std::cout << "\e[32;1mWelcome to Phonebook3000 !\e[0m" << std::endl;
 	while (1)
 	{
-		std::cout << "Please enter a valid command (ADD, SEARCH, EXIT)" << std::endl;
-		std::getline(std::cin, buff);
+		do
+		{
+			std::cin.clear();
+			std::cout << "Please enter a valid command (ADD, SEARCH, EXIT)" << std::endl;
+		}
+		while (!std::getline(std::cin, buff));
 		if (buff.compare("EXIT") == 0)
 		{
 			std::cout << "\e[32;1mGoodbye !\e[0m" << std::endl;
