@@ -7,7 +7,7 @@ SRCS = Contact.cpp Main.cpp
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
+$(NAME): $(SRCS) Contact.hpp
 	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) 
 
 clean:
