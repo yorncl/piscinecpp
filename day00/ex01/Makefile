@@ -3,11 +3,12 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = phonebook
 
-SRCS = Contact.cpp Main.cpp
+SRCS = Contact.cpp Main.cpp Phonebook.cpp
+HEADERS = Contact.hpp Phonebook.hpp
 
 all: $(NAME)
 
-$(NAME): $(SRCS) Contact.hpp
+$(NAME): $(SRCS) $(HEADERS)
 	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) 
 
 clean:
