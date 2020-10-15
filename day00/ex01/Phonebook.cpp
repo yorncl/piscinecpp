@@ -40,6 +40,7 @@ void Phonebook::getField(std::string &p, std::string label, bool mandatory) {
 
 void Phonebook::search_contact() {
     int index;
+	std::string	buff;
 
     if (nb == 0)
         std::cout << "Phonebook is empty !" << std::endl;
@@ -57,15 +58,15 @@ void Phonebook::search_contact() {
         do
         {
             std::cout << "Please enter a valid index" << std::endl;
-            if (!(std::cin >> index))
-            {
-                std::cout << "ERROR" << std::endl;
-                std::cin.clear();
+            if (std::getline(std::cin, buff).eof())
+                return;
+            if (buff.size() == 0 || buff.find_first_not_of("0123456789") != buff.npos)
                 index = -1;
-            }
+            else
+                index = atoi(buff.c_str());
         } while (index < 0 || index >= nb);
         std::cout << "---------- Contact " << index << " ----------" << std::endl;
         book[index].print();
-        std::cout << "---------- END " << index << " ----------" << std::endl;
+        std::cout << "---------- END ----------" << std::endl;
     }	
 }
