@@ -7,6 +7,12 @@
 class Contact
 {
 public:
+	Contact();
+	Contact(Contact &&) = default;
+	Contact(const Contact &) = default;
+	Contact &operator=(Contact &&) = default;
+	Contact &operator=(const Contact &) = default;
+	~Contact();
 	void	print();
 	std::string first,
 				last,

@@ -15,8 +15,6 @@ int		main(void)
 	while (1)
 	{
 		std::cout << "Please enter a valid command (ADD, SEARCH, EXIT)" << std::endl;
-	
-
 		if (std::getline(std::cin, buff).eof())
 		{
 			std::cout << "\e[32;1mGoodbye !\e[0m" << std::endl;

@@ -35,6 +35,8 @@ void Phonebook::getField(std::string &p, std::string label, bool mandatory) {
 		std::cout << label <<" ?" << std::endl;
 		std::cin.clear();
 		std::getline(std::cin, p);
+        if (std::cin.eof())
+            std::cin.clear();
 	} while (p.size() == 0 && mandatory);
 }
 
@@ -59,7 +61,11 @@ void Phonebook::search_contact() {
         {
             std::cout << "Please enter a valid index" << std::endl;
             if (std::getline(std::cin, buff).eof())
+            {
+                std::cin.clear();
+                std::cout << "Cancelling SEARCH command" << std::endl;
                 return;
+            }
             if (buff.size() == 0 || buff.find_first_not_of("0123456789") != buff.npos)
                 index = -1;
             else
