@@ -10,3 +10,6 @@ void	Pony::talk()
 {
 	std::cout << "I am " << this->color << " and " << this->age << " years old" << std::endl;
 }
+
+Pony::~Pony() {    
+}
