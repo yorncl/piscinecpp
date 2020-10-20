@@ -17,9 +17,9 @@ public:
 	void	print() const;
 	void	print_reduced() const;
 	void	fill();
-    void	getField(std::string &p, std::string label, bool mandatory = false);
 
 private:
+    void	getField(std::string &p, std::string label, bool mandatory = false);
 	std::string first_name,
 				last_name,
 				nickname,
