@@ -19,7 +19,6 @@ public:
 private:
     Contact book[8];
     int     nb;
-    void	getField(std::string &p, std::string label, bool mandatory = false);
 
 public:
     void    add_contact();
