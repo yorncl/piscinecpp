@@ -9,7 +9,7 @@ int		main(void)
 	std::string	buff;
 	Phonebook book;
 
-	std::cout << "\e[32;1mWelcome to Phonebook3000 !\e[0m" << std::endl;
+	std::cout << "\e[32;1mWelcome to the Crappy phonebook !\e[0m" << std::endl;
 	while (1)
 	{
 		std::cout << "Please enter a valid command (ADD, SEARCH, EXIT)" << std::endl;

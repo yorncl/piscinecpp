@@ -1,7 +1,7 @@
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 
-NAME = phonebook
+NAME = crappy_phonebook
 
 SRCS = Contact.cpp Main.cpp Phonebook.cpp
 HEADERS = Contact.hpp Phonebook.hpp
