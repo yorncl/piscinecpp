@@ -15,6 +15,10 @@ public:
     Phonebook &operator=(Phonebook &&) = default;
     Phonebook &operator=(const Phonebook &) = default;
     ~Phonebook();
+    std::string getField(std::string label, bool mandatory = false);
+    void	Phonebook::print_reduced(Contact &c);
+    void    Phonebook::print_detail(Contact &c);
+
 
 private:
     Contact book[8];

@@ -6,49 +6,90 @@ Contact::Contact() {
 Contact::~Contact() {
 }
 
-void	Contact::print() const
-{
-	std::cout << "First name:\"" << first_name << '"' << std::endl;
-	std::cout << "Last name:\"" << last_name << '"' << std::endl;
-	std::cout << "Nickname:\"" << nickname << '"' << std::endl;
-	std::cout << "Login:\"" << login << '"' << std::endl;
-	std::cout << "Postal adrress:\"" << postal_address << '"' << std::endl;
-	std::cout << "Email address:\"" << email_address << '"' << std::endl;
-	std::cout << "Phone number:\"" << phone_number << '"' << std::endl;
-	std::cout << "Birth date:\"" << birthday_date << '"' << std::endl;
-	std::cout << "Favorite Meal:\"" << favorite_meal << '"' << std::endl;
-	std::cout << "Underwear color:\"" << underwear_color << '"' << std::endl;
-	std::cout << "Darkest secret:\"" << darkest_secret << '"' << std::endl;
+void Contact::setFirstName(std::string str) {
+    first_name = str;
 }
 
-void	Contact::print_reduced() const
-{
-	std::cout << std::setw(10) << (first_name.size() > 10 ? first_name.substr(0, 9) + '.' : first_name) << "|";
-	std::cout << std::setw(10) << (last_name.size() > 10 ? last_name.substr(0, 9) + '.' : last_name) << "|";
-	std::cout << std::setw(10) << (nickname.size() > 10 ? nickname.substr(0, 9) + '.' : nickname) << std::endl;
+void Contact::setLastName(std::string str) {
+    last_name = str;
 }
 
-void Contact::fill() {
-    	getField(first_name, "First name (Cannot be empty)", true);
-		getField(last_name, "Last name (Cannot be empty)", true);
-		getField(nickname, "Nickname (Cannot be empty)", true);
-		getField(login, "Login (Cannot be empty)", true);
-		getField(postal_address, "Postal address");
-		getField(email_address, "Mail");
-		getField(phone_number, "Phone number");
-		getField(birthday_date, "Birth date");
-		getField(favorite_meal, "Favorite meal");
-		getField(underwear_color, "Underwear color");
-		getField(darkest_secret, "Darkest secret");
+void Contact::setNickname(std::string str) {
+    nickname = str;
 }
 
-void Contact::getField(std::string &p, std::string label, bool mandatory) {
-    do
-	{
-		std::cout << label <<" ?" << std::endl;
-		std::cin.clear();
-		std::getline(std::cin, p);
-        if (std::cin.eof())
-            std::cin.clear();
-	} while (p.size() == 0 && mandatory);
+void Contact::setLogin(std::string str) {
+    login = str;
+}
+
+void Contact::setPostalAddress(std::string str) {
+    postal_address = str;
+}
+
+void Contact::setEmailAddress(std::string str) {
+    email_address = str;
+}
+
+void Contact::setPhoneNumber(std::string str) {
+    phone_number = str;
+}
+
+void Contact::setBirthdayDate(std::string str) {
+    birthday_date = str;
+}
+
+void Contact::setFavoriteMeal(std::string str) {
+    favorite_meal = str;
+}
+
+void Contact::setUnderwearColor(std::string str) {
+    underwear_color = str;
+}
+
+void Contact::setDarkestSecret(std::string str) {
+    darkest_secret = str;
+}
+
+const std::string& Contact::getFirstName() const {
+    return first_name;
+}
+
+const std::string& Contact::getLastName() const {
+    return last_name;
+}
+
+const std::string& Contact::getNickname() const {
+    return nickname;
+}
+
+const std::string& Contact::getLogin() const {
+    return login;
+}
+
+const std::string& Contact::getPostalAddress() const {
+    return postal_address;
+}
+
+const std::string& Contact::getEmailAddress() const {
+    return email_address;
+}
+
+const std::string& Contact::getPhoneNumber() const {
+    return phone_number;
+}
+
+const std::string& Contact::getBirthdayDate() const {
+    return birthday_date;
+}
+
+const std::string& Contact::getFavoriteMeal() const {
+    return favorite_meal;
+}
+
+const std::string& Contact::getUnderwearColor() const {
+    return underwear_color;
+}
+
+const std::string& Contact::getDarkestSecret() const {
+    return darkest_secret;
 }
