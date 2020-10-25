@@ -3,8 +3,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = crappy_phonebook
 
-SRCS = Contact.cpp Main.cpp Phonebook.cpp
-HEADERS = Contact.hpp Phonebook.hpp
+SRCS = Contact.cpp Main.cpp Phonebook.cpp Utils.cpp
+HEADERS = Contact.hpp Phonebook.hpp Utils.hpp
 
 all: $(NAME)
 

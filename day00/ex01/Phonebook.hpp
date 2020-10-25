@@ -2,6 +2,7 @@
 #define PHONEBOOK
 
 #include "Contact.hpp"
+#include "Utils.hpp"
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -15,9 +16,9 @@ public:
     Phonebook &operator=(Phonebook &&) = default;
     Phonebook &operator=(const Phonebook &) = default;
     ~Phonebook();
-    std::string getField(std::string label, bool mandatory = false);
-    void	Phonebook::print_reduced(Contact &c);
-    void    Phonebook::print_detail(Contact &c);
+    std::string getField(const std::string label, bool mandatory = false);
+    void	printReduced(const Contact &c) const;
+    void    printDetail(const Contact &c) const;
 
 
 private:
@@ -25,8 +26,8 @@ private:
     int     nb;
 
 public:
-    void    add_contact();
-    void    search_contact();
+    void    addContact();
+    void    searchContact() const;
 
 };
 #endif // PHONEBOOK
