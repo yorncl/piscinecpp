@@ -8,10 +8,8 @@ class Pony
 {
 public:
 	Pony(std::string color,	int age);
-	Pony(Pony &&) = default;
-	Pony(const Pony &) = default;
-	Pony &operator=(Pony &&) = default;
-	Pony &operator=(const Pony &) = default;
+	Pony(const Pony &);
+	Pony &operator=(const Pony &);
 	~Pony();
 
 private:

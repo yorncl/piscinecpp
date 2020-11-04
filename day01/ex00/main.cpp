@@ -5,7 +5,7 @@ void	ponyOnTheStack()
 {
 	Pony p = Pony("rouge", 7);
 	p.talk();
-	// delete &p;
+	// delete &p; // will create an error because p is on the stack
 }
 
 void	ponyOnTheHeap()
