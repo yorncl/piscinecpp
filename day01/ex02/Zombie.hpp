@@ -8,10 +8,8 @@ class Zombie
 {
 public:
 	Zombie();
-	Zombie(Zombie &&) = default;
-	Zombie(const Zombie &) = default;
-	Zombie &operator=(Zombie &&) = default;
-	Zombie &operator=(const Zombie &) = default;
+	Zombie(const Zombie &);
+	Zombie &operator=(const Zombie &);
 	~Zombie();
 
 private:

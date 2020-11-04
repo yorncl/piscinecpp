@@ -1,11 +1,19 @@
 #if !defined(ZOMBIEEVENT_HPP)
 #define ZOMBIEEVENT_HPP
 
-#include "Zombie.hpp"
+#include <cstdlib>
 #include <string>
+
+#include "Zombie.hpp"
 
 class ZombieEvent
 {
+public:
+	ZombieEvent();
+	ZombieEvent(const ZombieEvent &);
+	ZombieEvent &operator=(const ZombieEvent &);
+	~ZombieEvent();
+
 private:
 	std::string type;
 public:
