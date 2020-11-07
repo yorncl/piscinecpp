@@ -1,22 +1,17 @@
 #if !defined(ZOMBIEHORD_HPP)
 #define ZOMBIEHORD_HPP
 
+#include "Zombie.hpp"
+
 class ZombieHorde
 {
 private:
-	Zombie* arr
+	Zombie* arr;
 public:
 	ZombieHorde(int n);
+	ZombieHorde(const ZombieHorde &);
+	ZombieHorde &operator=(const ZombieHorde &);
 	~ZombieHorde();
 };
-
-ZombieHorde::ZombieHorde(/* args */)
-{
-}
-
-ZombieHorde::~ZombieHorde()
-{
-}
-
 
 #endif // ZOMBIEHORD_HPP

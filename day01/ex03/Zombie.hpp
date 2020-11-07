@@ -6,11 +6,17 @@
 
 class Zombie
 {
+public:
+	Zombie();
+	Zombie(std::string type = "default", std::string name = "Jean-Random");
+	Zombie(const Zombie &);
+	Zombie &operator=(const Zombie &);
+	~Zombie();
+
 private:
 	std::string name,
 				type;
 public:
-	Zombie(std::string type = "default", std::string name = "Jean-Random");
-	void	advert();
+	void	advert();	
 };
 #endif
