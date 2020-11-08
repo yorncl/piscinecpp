@@ -4,14 +4,14 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <stdint.h>
 
 class Brain
 {
 private:
-	/* data */
+	int _iq;
 public:
-	Brain(/* args */);
-	std::string	identify();
+	Brain(int iq);
 	std::string	identify() const;
 };
 #endif // BRAIN_HPP

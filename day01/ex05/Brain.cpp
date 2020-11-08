@@ -1,19 +1,13 @@
 #include "Brain.hpp"
 
-Brain::Brain(/* args */)
+Brain::Brain(int iq)
 {
-}
-
-std::string	Brain::identify()
-{
-	std::stringstream s;
-	s << "0x" << this;
-	return s.str();
+	_iq = iq;
 }
 
 std::string	Brain::identify() const
 {
 	std::stringstream s;
-	s << "0x" << this;
+	s << "0x" << std::uppercase << std::hex << uintptr_t(this);
 	return s.str();
 }

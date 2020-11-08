@@ -1,15 +1,15 @@
 #include "Human.hpp"
 
-Human::Human(/* args */)
+Human::Human() : _brain(Brain(-150)) 
 {
 }
 
 std::string	Human::identify()
 {
-	return this->brain.identify();
+	return _brain.identify();
 }
 
 Brain&		Human::getBrain()
 {
-	return (Brain&) this->brain;
+	return (Brain&) _brain;
 }
