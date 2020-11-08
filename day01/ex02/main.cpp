@@ -4,7 +4,7 @@
 
 int main(void)
 {
-	std::cout << "====== BASIC TESTS ======" << std::endl;
+	std::cout << "====== ZOMBIE TESTS ======" << std::endl;
 	Zombie x("Rampant", "Mistigri");
 	x.advert();
 	Zombie y("Rampant");
