@@ -6,8 +6,8 @@ Pony::Pony(std::string color, int age)
 	this->age = age;
 }
 
-Pony::~Pony() {
-
+Pony::~Pony()
+{
 }
 
 void	Pony::talk()

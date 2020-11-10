@@ -9,7 +9,6 @@ class Pony
 public:
 	Pony(std::string color,	int age);
 	Pony(const Pony &);
-	Pony &operator=(const Pony &);
 	~Pony();
 
 private:

@@ -1,6 +1,5 @@
 #include "Pony.hpp"
 
-
 void	ponyOnTheStack()
 {
 	Pony p = Pony("rouge", 7);
