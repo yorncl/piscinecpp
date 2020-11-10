@@ -1,28 +1,43 @@
 #include "Zombie.hpp"
-#include "ZombieEvent.hpp"
+#include "ZombieHorde.hpp"
 #include <iostream>
 
 int main(void)
 {
-	std::cout << "====== BASIC TESTS ======" << std::endl;
-	Zombie x("Rampant", "Mistigri");
-	x.advert();
-	Zombie y("Rampant");
-	y.advert();
+	std::cout << "=======SIMPLE TESTS=======" << std::endl;
+	{
+		std::cout << "====> size = 5" << std::endl;
+		ZombieHorde myhorde(5);
+		myhorde.announce();
+	}
+	{
+		std::cout << "====> size = 5" << std::endl;
+		ZombieHorde myhorde(15);
+		myhorde.announce();
+	}
 	
-	std::cout << "====== EVENT TESTS ======" << std::endl;
-	ZombieEvent z = ZombieEvent();
-	z.setZombieType("Volant");
-	Zombie* heap = z.newZombie("Marcel");
-	heap->advert();
-	delete heap;
-	
-	std::cout << "====== RANDOM TESTS ======" << std::endl;
-	z.setZombieType();
-	z.randomChump();
-	z.randomChump();
-	z.randomChump();
-	z.randomChump();
-	z.randomChump();
+	std::cout << "=======ERROR TESTS=======" << std::endl;
+	{
+		std::cout << "====> size = 0" << std::endl;
+		try
+		{
+			ZombieHorde myhorde(0);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+	{
+		std::cout << "====> size = -666" << std::endl;
+		try
+		{
+			ZombieHorde myhorde(-666);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
 	return 0;
 }

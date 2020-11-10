@@ -6,15 +6,15 @@ int main(void)
 {
 	std::cout << "====== ZOMBIE TESTS ======" << std::endl;
 	Zombie x("Rampant", "Mistigri");
-	x.advert();
+	x.announce();
 	Zombie y("Rampant");
-	y.advert();
+	y.announce();
 	
 	std::cout << "====== EVENT TESTS ======" << std::endl;
 	ZombieEvent z = ZombieEvent();
 	z.setZombieType("Volant");
 	Zombie* heap = z.newZombie("Marcel");
-	heap->advert();
+	heap->announce();
 	delete heap;
 	
 	std::cout << "====== RANDOM TESTS ======" << std::endl;

@@ -25,5 +25,5 @@ void	ZombieEvent::randomChump()
 {
 	std::string names[] = {"Bob", "Razowsky", "One", "Punch", "Man", "Coronavirus"};
 	Zombie z = Zombie(this->type, names[rand() % 6]);
-	z.advert();
+	z.announce();
 }
