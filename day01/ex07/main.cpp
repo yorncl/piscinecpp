@@ -3,6 +3,7 @@
 #include <string>
 #include <cstring>
 #include <fstream>
+#include <errno.h>
 
 static void printUsage()
 {
@@ -64,16 +65,18 @@ int main(int argc, char const *argv[])
 	std::string line;
 
 	// Opening filestreams
-	fin.open(filename, std::ios::in);
+	fin.open(filename.c_str(), std::ios::in);
 	if (fin.fail())
 	{
 		std::cerr << " Can't open " << filename << " -- Error: " << strerror(errno) << std::endl;
 		return 1;
 	}
-	fout.open(filename + ".replace", std::ios::out | std::ios::trunc);
+
+	filename.append(".replace");
+	fout.open(filename.c_str(), std::ios::out | std::ios::trunc);
 	if (fout.fail())
 	{
-		std::cerr << "Can't open output file (" << filename << ".replace) -- Error: " << strerror(errno) << std::endl;
+		std::cerr << "Can't open output file (" << filename << ") -- Error: " << strerror(errno) << std::endl;
 		return 1;
 	}
 	// Main loop
@@ -84,13 +87,14 @@ int main(int argc, char const *argv[])
 			std::getline(fin, line);
 			replaceS1forS2(line, s1, s2);
 			fout << line;
-				fout << std::endl;
 			if (fin.eof())
 				break;
+			else
+				fout << std::endl;
 		}
 		catch (const std::exception &e)
 		{
-			std::cerr << "\e[31;1m" <<e.what() << "\e[0m" << '\n';
+			std::cerr << "\e[31;1m" << e.what() << "\e[0m" << '\n';
 			break;
 		}
 	}
