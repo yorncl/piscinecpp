@@ -10,10 +10,11 @@ class HumanA
 {
 private:
 	std::string _name;
-	Weapon &_weapon;
+	Weapon &_weapon; // Doesn't change after initialization, best to use a reference that can't be modified afterward
 
 public:
 	HumanA(std::string name, Weapon &weapon);
 	void attack();
+	~HumanA();
 };
 #endif // HUMANA_HPP

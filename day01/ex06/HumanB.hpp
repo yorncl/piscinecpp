@@ -10,7 +10,7 @@ class HumanB
 {
 private:
 	std::string _name;
-	Weapon *_weapon;
+	Weapon *_weapon; // Can be modified afterward, so it's best to use a pointer
 
 public:
 	HumanB(std::string name, Weapon* weapon = 0);

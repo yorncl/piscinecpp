@@ -14,3 +14,7 @@ const std::string &Weapon::getType()
 {
 	return _type;
 }
+
+Weapon::~Weapon()
+{    
+}
