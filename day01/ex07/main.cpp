@@ -23,9 +23,9 @@ static int wrongArgs(int argc, char const *argv[])
 		std::cout << "Filename should not be empty" << std::endl;
 		return 1;
 	}
-	if (std::strlen(argv[2]) == 0)
+	if (std::strlen(argv[2]) == 0 || std::strlen(argv[3]) == 0)
 	{
-		std::cout << "String to replace should not be empty" << std::endl;
+		std::cout << "s1 and s2 cannot be empty" << std::endl;
 		return 1;
 	}
 	return 0;
