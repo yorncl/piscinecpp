@@ -1,9 +1,11 @@
 #include "Zombie.hpp"
 #include "ZombieHorde.hpp"
 #include <iostream>
+#include <ctime>
 
 int main(void)
 {
+	std::srand(time(0));
 	std::cout << "=======SIMPLE TESTS=======" << std::endl;
 	{
 		std::cout << "====> size = 5" << std::endl;
@@ -13,6 +15,8 @@ int main(void)
 	{
 		std::cout << "====> size = 5" << std::endl;
 		ZombieHorde myhorde(15);
+		myhorde.announce();
+		std::cout << "====> size = 5 same list" << std::endl;
 		myhorde.announce();
 	}
 	
