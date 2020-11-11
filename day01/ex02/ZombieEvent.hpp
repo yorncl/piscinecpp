@@ -10,7 +10,6 @@ class ZombieEvent
 {
 public:
 	ZombieEvent();
-	ZombieEvent(const ZombieEvent &);
 	~ZombieEvent();
 
 private:

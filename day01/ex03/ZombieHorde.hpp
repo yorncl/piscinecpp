@@ -16,7 +16,6 @@ private:
 	Zombie*	_horde;
 public:
 	ZombieHorde(int n);
-	ZombieHorde(const ZombieHorde &);
 	~ZombieHorde();
 	void	announce() const;
 };
