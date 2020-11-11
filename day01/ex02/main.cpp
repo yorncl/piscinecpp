@@ -1,9 +1,12 @@
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 #include <iostream>
+#include <ctime>
 
 int main(void)
 {
+	std::srand(time(NULL));
+	
 	std::cout << "====== ZOMBIE TESTS ======" << std::endl;
 	Zombie x("Rampant", "Mistigri");
 	x.announce();
@@ -20,6 +23,11 @@ int main(void)
 	std::cout << "====== RANDOM TESTS ======" << std::endl;
 	z.setZombieType();
 	z.randomChump();
+	z.randomChump();
+	z.randomChump();
+	z.randomChump();
+	z.randomChump();
+	z.setZombieType("RANDOM");
 	z.randomChump();
 	z.randomChump();
 	z.randomChump();

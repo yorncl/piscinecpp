@@ -1,11 +1,9 @@
 #include "ZombieEvent.hpp"
 
 ZombieEvent::ZombieEvent() {
-    
 }
 
 ZombieEvent::~ZombieEvent() {
-    
 }
 
 void	ZombieEvent::setZombieType(std::string type)
@@ -24,6 +22,6 @@ Zombie*	ZombieEvent::newZombie(std::string name)
 void	ZombieEvent::randomChump()
 {
 	std::string names[] = {"Bob", "Razowsky", "One", "Punch", "Man", "Coronavirus"};
-	Zombie z = Zombie(this->type, names[rand() % 6]);
+	Zombie z = Zombie(this->type, names[std::rand() % 6]);
 	z.announce();
 }

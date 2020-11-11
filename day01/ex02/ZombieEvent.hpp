@@ -11,7 +11,6 @@ class ZombieEvent
 public:
 	ZombieEvent();
 	ZombieEvent(const ZombieEvent &);
-	ZombieEvent &operator=(const ZombieEvent &);
 	~ZombieEvent();
 
 private:

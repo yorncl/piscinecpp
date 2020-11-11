@@ -9,7 +9,6 @@ class Zombie
 public:
 	Zombie(std::string type = "default", std::string name = "Jean-Random");
 	Zombie(const Zombie &);
-	Zombie &operator=(const Zombie &);
 	~Zombie();
 
 private:
