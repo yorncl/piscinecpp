@@ -11,3 +11,7 @@ std::string	Brain::identify() const
 	s << "0x" << std::uppercase << std::hex << uintptr_t(this);
 	return s.str();
 }
+
+Brain::~Brain()
+{    
+}

@@ -13,5 +13,6 @@ private:
 public:
 	Brain(int iq);
 	std::string	identify() const;
+	~Brain();
 };
 #endif // BRAIN_HPP

@@ -11,5 +11,6 @@ public:
 	Human();
 	std::string	identify();
 	Brain&	getBrain();
+	~Human();
 };
 #endif // HUMAN_HPP

@@ -13,3 +13,7 @@ Brain&		Human::getBrain()
 {
 	return (Brain&) _brain;
 }
+
+Human::~Human()
+{    
+}
