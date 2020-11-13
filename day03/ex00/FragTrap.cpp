@@ -94,7 +94,7 @@ void FragTrap::beRepaired(unsigned int amount)
 	{
 		_hit = _maxHit;
 	}
-	std::cout << "FR4G-TP " << _name << " is now " << _hit << " HP with " << _energy <<" !" << std::endl;
+	std::cout << "FR4G-TP " << _name << " is now " << _hit << " HP !" << std::endl;
 };
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
