@@ -23,7 +23,7 @@ NinjaTrap::NinjaTrap(const NinjaTrap &f) : ClapTrap(f._name)
 	_melee = f._melee;
 	_ranged = f._ranged;
 	_armor = f._armor;
-	std::cout << "CLAP-TP " << _name << " is born!" << std::endl;
+	std::cout << "NINJA-TP " << _name << " is born!" << std::endl;
 }
 
 NinjaTrap& NinjaTrap::operator=(const NinjaTrap &f)

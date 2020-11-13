@@ -13,8 +13,8 @@ class NinjaTrap : public ClapTrap
 
 public:
 	NinjaTrap(std::string);
-	NinjaTrap(const NinjaTrap &) = default;
-	NinjaTrap &operator=(const NinjaTrap &) = default;
+	NinjaTrap(const NinjaTrap &);
+	NinjaTrap &operator=(const NinjaTrap &);
 	~NinjaTrap();
 	void ninjaShoebox(ScavTrap&);
 	void ninjaShoebox(FragTrap&);
