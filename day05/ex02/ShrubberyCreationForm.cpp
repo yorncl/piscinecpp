@@ -8,8 +8,23 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &f) : Form(f.name , f.target, f.gradeSign, f.gradeEx)
+{
+}
+
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &f)
+{
+	target = f.target;
+	sig = f.sig;
+	return *this;
+}
+
+
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
+	std::ofstream fout;
+	std::string filename;
+	
 	try
 	{
 		Form::execute(executor);
@@ -18,9 +33,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	{
 		throw;
 	}
-	
-	std::ofstream fout;
-	fout.open(getTarget() + "_shrubbery",  std::ios::out | std::ios::trunc);
+	filename = getTarget() + "_shrubbery";
+	fout.open(filename.c_str(),  std::ios::out | std::ios::trunc);
 
 	fout << 
 "                                                         .\n"

@@ -4,9 +4,21 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("robotomy re
 {
 }
 
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &f)
+{
+	target = f.target;
+	sig = f.sig;
+	return *this;
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &f) : Form(f.name , f.target, f.gradeSign, f.gradeEx)
+{
+}
+
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
+
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
@@ -18,7 +30,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	{
 		throw;
 	}
-	if(rand() % 2)
+	if(std::rand() % 2)
 		std::cout << this->getTarget() << " robotomization successfull !" << std::endl;
 	else
 		std::cout << this->getTarget() << " robotomization failed !" << std::endl;

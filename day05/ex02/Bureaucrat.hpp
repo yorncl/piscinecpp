@@ -16,28 +16,22 @@ private:
 	int grade;
 	struct GradeTooHighException : public std::exception
 	{
-		const char * what () const throw ()
-		{
-			return "GradeTooHighException";
-		}
+		const char * what () const throw ();
 	};
 	struct GradeTooLowException : public std::exception
 	{
-		const char * what () const throw ()
-		{
-			return "GradeTooLowException";
-		}
+		const char * what () const throw ();
 	};
 public:
 	Bureaucrat(std::string name, int grade);
-	Bureaucrat(const Bureaucrat &) = default;
-	Bureaucrat &operator=(const Bureaucrat &) = default;
+	Bureaucrat(const Bureaucrat &);
+	Bureaucrat &operator=(const Bureaucrat &);
 	~Bureaucrat();
 	std::string getName() const;
 	int getGrade() const;
 	void inc();
 	void dec();
-	void signForm(Form&);
+	void signForm(Form &f);
 	void executeForm(Form const & form);
 };
 

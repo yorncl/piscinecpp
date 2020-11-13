@@ -1,4 +1,6 @@
 #include <ostream>
+#include <cstdlib>
+#include <ctime>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
@@ -8,6 +10,7 @@
 
 int main(void)
 {
+	std::srand(std::time(0));
 	std::cout << "" << std::endl;
 
 	Bureaucrat bob("Bob", 10);
@@ -31,6 +34,7 @@ std::cout << "===== SHRUBBERY =======" << std::endl;
 	nulos.signForm(*f2);
 	c.signForm(*f2);
 	nulos.executeForm(*f2);
+	c.executeForm(*f2);
 
 std::cout << "===== PRESIDENTIAL =======" << std::endl;
 	Form *f3 = new PresidentialPardonForm("Le capitalisme");

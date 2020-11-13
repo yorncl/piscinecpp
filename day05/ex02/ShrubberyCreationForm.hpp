@@ -8,8 +8,8 @@ class ShrubberyCreationForm : public Form
 {
 public:
 	ShrubberyCreationForm(std::string);
-	ShrubberyCreationForm(const ShrubberyCreationForm &) = default;
-	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &) = default;
+	ShrubberyCreationForm(const ShrubberyCreationForm &);
+	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &);
 	~ShrubberyCreationForm();
 	void execute(Bureaucrat const & executor) const;
 };
