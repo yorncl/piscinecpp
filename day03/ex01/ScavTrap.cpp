@@ -4,13 +4,13 @@ ScavTrap::ScavTrap(std::string n)
 {
 	_hit = 100;
 	_maxHit = 100;
-	_energy = 100;
-	_maxEnergy = 100;
+	_energy = 50;
+	_maxEnergy = 50;
 	_level = 1;
 	_name = n;
-	_melee = 30;
-	_ranged = 20;
-	_armor = 5;
+	_melee = 20;
+	_ranged = 15;
+	_armor = 3;
 	std::cout << "SCAV-TP " << _name << " is born!" << std::endl;
 }
 
