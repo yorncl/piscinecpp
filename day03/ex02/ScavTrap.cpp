@@ -20,7 +20,6 @@ ScavTrap::ScavTrap(const ScavTrap &f) : ClapTrap(f._name)
 	_energy = f._energy;
 	_maxEnergy = f._maxEnergy;
 	_level = f._level;
-	_name = f._name;
 	_melee = f._melee;
 	_ranged = f._ranged;
 	_armor = f._armor;
