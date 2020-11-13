@@ -3,24 +3,25 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 class FragTrap
 {
 private:
-	int hit;
-	int maxHit;
-	int energy;
-	int maxEnergy;
-	int level;
-	std::string name;
-	int melee;
-	int ranged;
-	int armor;
+	int _hit;
+	int _maxHit;
+	int _energy;
+	int _maxEnergy;
+	int _level;
+	std::string _name;
+	int _melee;
+	int _ranged;
+	int _armor;
 
 public:
 	FragTrap(std::string);
-	FragTrap(const FragTrap &) = default;
-	FragTrap &operator=(const FragTrap &) = default;
+	FragTrap(const FragTrap &);
+	FragTrap &operator=(const FragTrap &);
 	~FragTrap();
 	void rangedAttack(std::string const &target);
 	void meleeAttack(std::string const &target);
@@ -28,5 +29,6 @@ public:
 	void beRepaired(unsigned int amount);
 	void addEnergy(int amount);
 	void vaulthunter_dot_exe(std::string const & target);
+	void print();
 };
 #endif // FRAGTRAP_HPP
