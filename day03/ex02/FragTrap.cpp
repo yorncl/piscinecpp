@@ -2,7 +2,6 @@
 
 FragTrap::FragTrap(std::string n) : ClapTrap(n)
 {
-	std::cout << "FR4G-TP " << _name << " is born!" << std::endl;
 	_hit = 100;
 	_maxHit = 100;
 	_energy = 100;
@@ -11,6 +10,7 @@ FragTrap::FragTrap(std::string n) : ClapTrap(n)
 	_melee = 30;
 	_ranged = 20;
 	_armor = 5;
+	std::cout << "FR4G-TP " << _name << " is born!" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &f) : ClapTrap(f._name)

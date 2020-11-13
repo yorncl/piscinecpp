@@ -2,7 +2,6 @@
 
 ScavTrap::ScavTrap(std::string n) : ClapTrap(n)
 {
-	std::cout << "SCAV-TP " << _name << " is born!" << std::endl;
 	_hit = 100;
 	_maxHit = 100;
 	_energy = 50;
@@ -11,6 +10,7 @@ ScavTrap::ScavTrap(std::string n) : ClapTrap(n)
 	_melee = 20;
 	_ranged = 15;
 	_armor = 3;
+	std::cout << "SCAV-TP " << _name << " is born!" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &f) : ClapTrap(f._name)

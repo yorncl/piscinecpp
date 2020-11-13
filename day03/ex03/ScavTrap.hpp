@@ -2,6 +2,7 @@
 #define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
+
 #include <iostream>
 #include <string>
 
@@ -10,8 +11,8 @@ class ScavTrap : public ClapTrap
 
 public:
 	ScavTrap(std::string);
-	ScavTrap(const ScavTrap &) = default;
-	ScavTrap &operator=(const ScavTrap &) = default;
+	ScavTrap(const ScavTrap &);
+	ScavTrap &operator=(const ScavTrap &);
 	~ScavTrap();
 	void challengeNewcomer();
 };
