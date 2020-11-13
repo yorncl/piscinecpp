@@ -6,6 +6,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 
 int main(void)
@@ -15,10 +16,19 @@ int main(void)
 
 	Bureaucrat bob("Bob", 10);
 	Bureaucrat nulos("Nulos", 150);
+	
 
-std::cout << "===== ROBOTOMY =======" << std::endl;
+std::cout << std::endl << "======= Intern constructor =======" << std::endl;
+	Intern fabieng = Intern();
+	Intern corentaing(fabieng);
+	fabieng = corentaing;
+	Form* nul = fabieng.makeForm("does not exists", "cible");
+	(void) nul;
+
+std::cout << std::endl << "======= ROBOTOMY =======" << std::endl;
 	Bureaucrat c("Joseph", 10);
-	Form *f1 = new RobotomyRequestForm("CIBLE");
+	// Form *f1 = new RobotomyRequestForm("CIBLE");
+	Form *f1 = fabieng.makeForm("robotomy request", "CIBLE");
 	c.executeForm(*f1);
 	c.signForm(*f1);
 	c.executeForm(*f1);
@@ -28,16 +38,18 @@ std::cout << "===== ROBOTOMY =======" << std::endl;
 	c.executeForm(*f1);
 	c.executeForm(*f1);
 	
-std::cout << "===== SHRUBBERY =======" << std::endl;
-	Form *f2 = new ShrubberyCreationForm("Hi doggy");
+std::cout << std::endl << "======= SHRUBBERY =======" << std::endl;
+	// Form *f2 = new ShrubberyCreationForm("Hi doggy");
+	Form *f2 = fabieng.makeForm("shrubbery creation", "hi doggy");
 	bob.executeForm(*f2);
 	nulos.signForm(*f2);
 	c.signForm(*f2);
 	nulos.executeForm(*f2);
 	c.executeForm(*f2);
 
-std::cout << "===== PRESIDENTIAL =======" << std::endl;
-	Form *f3 = new PresidentialPardonForm("Le capitalisme");
+std::cout << std::endl << "======= PRESIDENTIAL =======" << std::endl;
+	// Form *f3 = new PresidentialPardonForm("Le capitalisme");
+	Form *f3 = fabieng.makeForm("presidential pardon", "le capitalisme");
 	bob.executeForm(*f3);
 	nulos.signForm(*f3);
 	c.signForm(*f3);

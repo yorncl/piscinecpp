@@ -1,8 +1,15 @@
 #include "Intern.hpp"
 
 
+std::string Intern::labels[4] = {
+        "shrubbery creation",
+        "presidential pardon",
+        "robotomy request",
+        ""
+};
+
 Intern::Intern()
-{
+{    
 }
 
 Intern::Intern(const Intern &)
@@ -10,6 +17,7 @@ Intern::Intern(const Intern &)
 }
 
 Intern &Intern::operator=(const Intern &) {
+    return *this;
 }
 
 Intern::~Intern()
@@ -29,12 +37,10 @@ int Intern::resolveName(std::string name)
     return -1;
 }
 
-Form *
-
-
-Form *Intern::makeForm(std::string type, std::string target)
+Form *Intern::createForm(int id, std::string target)
 {
-    switch (resolveName(type))
+    std::cout << "Intern creates " << labels[id] << std::endl;
+    switch (id)
     {
         case 0:
             return new ShrubberyCreationForm(target);
@@ -46,8 +52,17 @@ Form *Intern::makeForm(std::string type, std::string target)
             return new RobotomyRequestForm(target);
             break;
         default:
-            std::cout << "F" << std::endl;
-            return NULL;
             break;
-    }    
+    }
+    return NULL;
 }
+
+Form *Intern::makeForm(std::string type, std::string target)
+{
+
+    int id = resolveName(type);
+    if (id >= 0)
+        return createForm(id, target);
+    std::cout << "The Form has not been found" << std::endl;
+    return NULL;
+}  

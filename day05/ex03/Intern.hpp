@@ -19,13 +19,8 @@ public:
     Form *makeForm(std::string type, std::string target);
 private:
     int resolveName(std::string name);
-    Form *createForm(int id);
-    const std::string labels[4] = {
-        "shruberry creation",
-        "presidential pardon",
-        "robotomy request",
-        ""
-    };
+    Form *createForm(int id, std::string target);
+    static std::string labels[4];
 };
 
 #endif // INTERN_HPP
