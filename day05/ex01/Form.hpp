@@ -16,22 +16,16 @@ private:
 	const int gradeEx;
 	struct GradeTooHighException : public std::exception
 	{
-		const char * what () const throw ()
-		{
-			return "GradeTooHighException";
-		}
+		const char * what () const throw ();
 	};
 	struct GradeTooLowException : public std::exception
 	{
-		const char * what () const throw ()
-		{
-			return "GradeTooLowException";
-		}
+		const char * what () const throw ();
 	};
 public:
 	Form(std::string, int, int);
-	Form(const Form &) = default;
-	Form &operator=(const Form &) = default;
+	Form(const Form &);
+	Form &operator=(const Form &);
 	~Form();
 	std::string getName() const;
 	int getGradeSign() const;
