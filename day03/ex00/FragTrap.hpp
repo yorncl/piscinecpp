@@ -31,5 +31,4 @@ public:
 	void vaulthunter_dot_exe(std::string const & target);
 	void print();
 };
-
 #endif // FRAGTRAP_HPP

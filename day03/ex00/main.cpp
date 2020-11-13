@@ -17,7 +17,9 @@ int main(void)
 	FragTrap f3(f2);
 	f3.print();
 	std::cout << std::endl << "========= Assignment Operator =========" << std::endl;
-	FragTrap f4 = *f1;
+	FragTrap f4("Diane");
+	f1->meleeAttack("Test");
+	f4 = *f1;
 	f4.print();
 
 

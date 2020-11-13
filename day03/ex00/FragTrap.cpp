@@ -28,6 +28,21 @@ FragTrap::FragTrap(const FragTrap &f)
 	std::cout << "FR4G-TP " << _name << " is born!" << std::endl;
 }
 
+FragTrap& FragTrap::operator=(const FragTrap &f)
+{
+	_hit = f._hit;
+	_maxHit = f._maxHit;
+	_energy = f._energy;
+	_maxEnergy = f._maxEnergy;
+	_level = f._level;
+	_name = f._name;
+	_melee = f._melee;
+	_ranged = f._ranged;
+	_armor = f._armor;
+	return *this;
+}
+
+
 FragTrap::~FragTrap()
 {
 	std::cout << "FR4G-TP " << _name << " is desructed!" << std::endl;
