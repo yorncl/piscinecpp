@@ -113,7 +113,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 void ClapTrap::print()
 {
-	std::cout << "--------- FR4G-TP ---------" << std::endl <<
+	std::cout << "--------- CLAP-TP ---------" << std::endl <<
 	"_hit : " << _hit << std::endl <<
 	"_maxHit : " << _maxHit << std::endl <<
 	"_energy : " << _energy << std::endl <<

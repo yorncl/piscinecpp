@@ -8,12 +8,10 @@
 
 class SuperTrap : public FragTrap, public NinjaTrap
 {
-protected:
-	static int const init_level = 1;
 public:
 	SuperTrap(std::string);
-	SuperTrap(const SuperTrap &) = default;
-	SuperTrap &operator=(const SuperTrap &) = default;
+	SuperTrap(const SuperTrap &);
+	SuperTrap &operator=(const SuperTrap &);
 	~SuperTrap();
 	void printAttributes();
 	using FragTrap::rangedAttack;

@@ -23,7 +23,7 @@ int main(void)
 	n.beRepaired(15);
 	std::cout << "========= NINJATRAP ==========" << std::endl;
 	SuperTrap su("Chewbacca");
-	su.printAttributes();
+	su.print();
 	su.meleeAttack("one");
 	su.rangedAttack("two");
 	su.ninjaShoebox(f);
