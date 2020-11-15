@@ -7,14 +7,13 @@
 class Fixed
 {
 private:
-	int value;
-	static const int nBits = 8;
+	int _value;
+	static const int _fractional_bits = 8;
 
 public:
 	Fixed();
 	Fixed(const int);
 	Fixed(const float);
-	Fixed(Fixed &&) = default;
 	Fixed(const Fixed &);
 	void operator=(const Fixed &);
 	~Fixed();
