@@ -1,5 +1,5 @@
-#if !defined(MACRO)
-#define MACRO
+#if !defined(FIXED_HPP)
+#define FIXED_HPP
 
 #include <iostream>
 #include <cmath>
@@ -8,7 +8,7 @@ class Fixed
 {
 private:
 	int _value;
-	static const int _fractional_bits = 8;
+	static const int _fractional_bits;
 
 public:
 	Fixed();
@@ -24,4 +24,4 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &, const Fixed &f);
-#endif // MACRO
+#endif // FIXED_HPP
