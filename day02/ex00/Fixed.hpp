@@ -1,5 +1,5 @@
-#if !defined(MACRO)
-#define MACRO
+#if !defined(FIXED_HPP)
+#define FIXED_HPP
 
 #include <iostream>
 
@@ -17,5 +17,5 @@ public:
 	void setRawBits(int const raw);
 };
 
-#endif // MACRO
+#endif // FIXED_HPP
 
