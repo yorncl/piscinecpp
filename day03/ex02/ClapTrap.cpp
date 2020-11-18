@@ -89,7 +89,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (oof > 0)
 	{
 		_hit -= oof;
-		if (_hit < 0)
+		if (_hit <= 0)
 		{
 			_hit = 0;
 			std::cout << _name << " just got beaten up to death!" << std::endl;
