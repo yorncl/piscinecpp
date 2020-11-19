@@ -15,7 +15,7 @@ int main(int ac, char** av)
 		return 0;
 	}
 
-	if (strcmp(av[1], "scav") == 0)
+		if (strcmp(av[1], "scav") == 0)
 	{
 		std::srand(std::time(0)); // init random seed
 
@@ -41,11 +41,6 @@ int main(int ac, char** av)
 		f2.meleeAttack("Bandit");
 		f2.meleeAttack("Bandit");
 		f2.meleeAttack("Bandit");
-		f2.meleeAttack("Bandit");
-		f2.meleeAttack("Bandit");
-		f2.meleeAttack("Bandit");
-		f2.meleeAttack("Bandit");
-		f2.meleeAttack("Bandit");
 		// SHOULD BE OUT OF ENERGY
 		f2.meleeAttack("Bandit");
 		f2.meleeAttack("Bandit");
@@ -55,10 +50,12 @@ int main(int ac, char** av)
 		f3.rangedAttack("Zer0");
 		f3.rangedAttack("Zer0");
 		f3.rangedAttack("Zer0");
+		f3.rangedAttack("Zer0");
 		// SHOULD BE OUT OF ENERGY
 		f3.rangedAttack("Zer0");
 
 		std::cout << std::endl << "========= Take Damage/Be repaired ==========" << std::endl;
+		f3.takeDamage(3);
 		f3.addEnergy(500);
 		f3.takeDamage(10);
 		f3.rangedAttack("Zer0");
@@ -92,7 +89,7 @@ int main(int ac, char** av)
 	}
 	else if (strcmp(av[1], "frag") == 0)
 	{
-		std::srand(std::time(0)); // init random seed
+			std::srand(std::time(0)); // init random seed
 
 		std::cout << std::endl << "========= Basic constructor =========" << std::endl;
 		FragTrap *f1 = new FragTrap("Brigitte");
@@ -129,11 +126,18 @@ int main(int ac, char** av)
 		f3.rangedAttack("Zer0");
 		f3.rangedAttack("Zer0");
 		f3.rangedAttack("Zer0");
+		f3.rangedAttack("Zer0");
+		f3.rangedAttack("Zer0");
+		f3.rangedAttack("Zer0");
+		f3.rangedAttack("Zer0");
+		f3.rangedAttack("Zer0");
+		f3.rangedAttack("Zer0");
 		// SHOULD BE OUT OF ENERGY
 		f3.rangedAttack("Zer0");
 
 		std::cout << std::endl << "========= Take Damage/Be repaired ==========" << std::endl;
 		f3.addEnergy(500);
+		f3.takeDamage(3);
 		f3.takeDamage(10);
 		f3.rangedAttack("Zer0");
 		f3.takeDamage(1000);
@@ -144,6 +148,7 @@ int main(int ac, char** av)
 		f3.rangedAttack("Zer0");
 
 		std::cout << std::endl << "========= Vaulthunter ==========" << std::endl;
+		f4.addEnergy(500);
 		f4.vaulthunter_dot_exe("Psycho");
 		f4.vaulthunter_dot_exe("Psycho");
 		f4.vaulthunter_dot_exe("Psycho");
@@ -269,17 +274,12 @@ int main(int ac, char** av)
 		f2.meleeAttack("Bandit");
 		f2.meleeAttack("Bandit");
 		f2.meleeAttack("Bandit");
-		// SHOULD BE OUT OF ENERGY
-		f2.meleeAttack("Bandit");
-		f2.meleeAttack("Bandit");
 
 		std::cout << std::endl << "========= Ranged ==========" << std::endl;
-		f3.rangedAttack("Zer0");
-		f3.rangedAttack("Zer0");
-		f3.rangedAttack("Zer0");
-		f3.rangedAttack("Zer0");
+		f2.rangedAttack("Zer0");
+		f2.rangedAttack("Zer0");
 		// SHOULD BE OUT OF ENERGY
-		f3.rangedAttack("Zer0");
+		f2.rangedAttack("Zer0");
 
 		std::cout << std::endl << "========= Take Damage/Be repaired ==========" << std::endl;
 		f3.addEnergy(500);
@@ -296,9 +296,16 @@ int main(int ac, char** av)
 		FragTrap f("Jar Jar Binks");
 		ScavTrap s("Han Solo");
 		NinjaTrap n("Chewbacca");
+		ClapTrap c("Obi wan");
+		std::cout << std::endl;
 		n.ninjaShoebox(f);
+		std::cout << std::endl;
 		n.ninjaShoebox(s);
+		std::cout << std::endl;
 		n.ninjaShoebox(n);
+		std::cout << std::endl;
+		n.ninjaShoebox(c);
+		std::cout << std::endl;
 		n.beRepaired(15);
 
 		std::cout << std::endl << "========= Mixed tests ==========" << std::endl;

@@ -19,5 +19,6 @@ public:
 	void ninjaShoebox(ScavTrap&);
 	void ninjaShoebox(FragTrap&);
 	void ninjaShoebox(NinjaTrap&);
+	void ninjaShoebox(ClapTrap&);
 };
 #endif // SCAVTRAP_HPP

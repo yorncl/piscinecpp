@@ -49,14 +49,20 @@ void NinjaTrap::ninjaShoebox(ScavTrap& s)
 {
 	s.takeDamage(10);
 	std::cout << "NINJA-TP - Get Scavtrapped!" << std::endl;
-};
+}
 void NinjaTrap::ninjaShoebox(FragTrap& f)
 {
 	f.takeDamage(10);
 	std::cout << "NINJA-TP - Get Fragtrapped!" << std::endl;
-};
+}
 void NinjaTrap::ninjaShoebox(NinjaTrap& n)
 {
 	n.takeDamage(10);
 	std::cout << "NINJA-TP - bruh, we're on the same team >:[" << std::endl;
+}
+
+void NinjaTrap::ninjaShoebox(ClapTrap& n)
+{
+	n.takeDamage(10);
+	std::cout << "NINJA-TP - get Claptrapped !" << std::endl;
 };
