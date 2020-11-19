@@ -63,7 +63,6 @@ int main(int argc, const char** argv) {
     std::string str(argv[1]);
     e_type t = getType(str);
     std::cout << "TYPE == " << arr[t] << std::endl;
-    
 
     return 0;
 }
