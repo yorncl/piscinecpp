@@ -10,15 +10,15 @@ class Sorcerer
 {
 public:
 	Sorcerer(std::string, std::string);
-	Sorcerer(const Sorcerer &) = default;
-	Sorcerer &operator=(const Sorcerer &) = default;
+	Sorcerer(const Sorcerer &);
+	Sorcerer &operator=(const Sorcerer &);
 	~Sorcerer();
 	std::string getName() const;
 	std::string getTitle() const;
 	void polymorph(Victim const &) const;
 
 private:
-	std::string name, title;
+	std::string _name, _title;
 };
 
 std::ostream &operator<<(std::ostream &, const Sorcerer &);

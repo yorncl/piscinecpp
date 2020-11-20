@@ -9,8 +9,8 @@ class Peon : public Victim
 {
 public:
 	Peon(std::string);
-	Peon(const Peon &) = default;
-	Peon &operator=(const Peon &) = default;
+	Peon(const Peon &);
+	Peon &operator=(const Peon &);
 	~Peon();
 	void getPolymorphed() const;
 

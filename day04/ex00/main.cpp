@@ -4,6 +4,14 @@
 
 int main(void)
 {
+	std::cout << "-------- Constructor tests" << std::endl;
+	{
+		Sorcerer s("Bob","le bricoleur");
+		Sorcerer s2(s);
+		Sorcerer s("Dora", "l'exploratriice")
+	}
+
+	std::cout << std::endl << "-------- Subject tests ------------" << std::endl;
 	Sorcerer robert("Robert", "the Magnificent");
 	Victim jim("Jimmy");
 	Peon joe("Joe");
