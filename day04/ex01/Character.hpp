@@ -10,12 +10,14 @@
 class Character
 {
 private:
-	std::string const name;
-	int ap;
-	AWeapon *weapon;
+	std::string _name;
+	int _ap;
+	AWeapon *_weapon;
 
 public:
 	Character(std::string const &name);
+	Character(const Character&);
+	Character& operator=(const Character&);
 	virtual ~Character();
 	void recoverAP();
 	void equip(AWeapon *);

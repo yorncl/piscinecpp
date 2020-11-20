@@ -3,11 +3,14 @@
 #include "SuperMutant.hpp"
 #include "PowerFist.hpp"
 #include "AWeapon.hpp"
-#include "Plasmarifle.hpp"
+#include "PlasmaRifle.hpp"
 
 int main()
 {
-	std::cout << "====== Subject Tests ======" << std::endl;
+
+	std::cout << "====== Construtor Tests ======" << std::endl;
+
+	std::cout << std::endl << "====== Subject Tests ======" << std::endl;
 	Character *me = new Character("me");
 	std::cout << *me;
 	Enemy *b = new RadScorpion();
@@ -25,7 +28,7 @@ int main()
 	me->attack(b);
 	std::cout << *me;
 	
-	std::cout << "====== My Tests ======" << std::endl;
+	std::cout << std::endl << "====== My Tests ======" << std::endl;
 	me->recoverAP();
 	me->recoverAP();
 	me->recoverAP();

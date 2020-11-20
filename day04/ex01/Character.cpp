@@ -1,7 +1,22 @@
 #include "Character.hpp"
 
-Character::Character(std::string const &name) : name(name), ap(40), weapon(0)
+Character::Character(std::string const &name) : _name(name), _ap(40), _weapon(0)
 {
+}
+
+Character::Character(const Character& c)
+{
+	_name = c._name;
+	_ap = c._ap;
+	_weapon = c._weapon;
+}
+
+Character & Character::operator=(const Character& c)
+{
+	_name = c._name;
+	_ap = c._ap;
+	_weapon = c._weapon;
+	return *this;
 }
 
 Character::~Character()
@@ -10,42 +25,42 @@ Character::~Character()
 
 void Character::recoverAP()
 {
-	ap += 10;
-	if (ap > 40)
-		ap = 40;	
+	_ap += 10;
+	if (_ap > 40)
+		_ap = 40;	
 }
 
 void Character::equip(AWeapon *w)
 {
-	weapon = w;
+	_weapon = w;
 }
 
 void Character::attack(Enemy *enemy)
 {
-	if (!weapon)
+	if (!_weapon)
 		return;
-	int apcost = weapon->getAPCost();
-	if (apcost > ap)
+	int apcost = _weapon->getAPCost();
+	if (apcost > _ap)
 		return;
-	std::cout << name << " attacks " << enemy->getType() << " with " << weapon->getName() << std::endl;
-	weapon->attack();
-	enemy->takeDamage(weapon->getDamage());
-	ap -= apcost;
+	std::cout << _name << " attacks " << enemy->getType() << " with " << _weapon->getName() << std::endl;
+	_weapon->attack();
+	enemy->takeDamage(_weapon->getDamage());
+	_ap -= apcost;
 }
 
 std::string const Character::getName() const
 {
-	return name;
+	return _name;
 }
 
 int Character::getAp() const
 {
-	return ap;
+	return _ap;
 }
 
 AWeapon* Character::getWeapon() const
 {
-	return weapon;
+	return _weapon;
 }
 
 std::ostream &operator<<(std::ostream& os, Character& c)

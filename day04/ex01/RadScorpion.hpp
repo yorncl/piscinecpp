@@ -10,8 +10,8 @@ class RadScorpion : public Enemy
 private:
 public:
 	RadScorpion();
-	RadScorpion(const RadScorpion &) = default;
-	RadScorpion &operator=(const RadScorpion &) = default;
+	RadScorpion(const RadScorpion &);
+	RadScorpion &operator=(const RadScorpion &);
 	~RadScorpion();
 };
 

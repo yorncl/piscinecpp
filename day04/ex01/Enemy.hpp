@@ -7,10 +7,12 @@
 class Enemy
 {
 private:
-	int hp;
-	std::string const type;
+	int _hp;
+	std::string _type;
 public :
 	Enemy(int hp, std::string const &type);
+	Enemy(const Enemy &);
+	Enemy& operator=(const Enemy &);
 	virtual ~Enemy();
 	std::string const getType() const;
 	int getHP() const;

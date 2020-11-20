@@ -8,8 +8,8 @@ class PowerFist : public AWeapon
 {
 public:
 	PowerFist();
-	PowerFist(const PowerFist &) = default;
-	PowerFist &operator=(const PowerFist &) = default;
+	PowerFist(const PowerFist &);
+	PowerFist &operator=(const PowerFist &);
 	~PowerFist();
 	void attack() const;
 };

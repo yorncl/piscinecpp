@@ -11,8 +11,8 @@ private:
 
 public:
 	SuperMutant();
-	SuperMutant(const SuperMutant &) = default;
-	SuperMutant &operator=(const SuperMutant &) = default;
+	SuperMutant(const SuperMutant &);
+	SuperMutant &operator=(const SuperMutant &);
 	~SuperMutant();
 	void takeDamage(int);
 };

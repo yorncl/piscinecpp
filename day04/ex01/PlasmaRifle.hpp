@@ -8,8 +8,8 @@ class PlasmaRifle : public AWeapon
 {
 public:
 	PlasmaRifle();
-	PlasmaRifle(const PlasmaRifle &) = default;
-	PlasmaRifle &operator=(const PlasmaRifle &) = default;
+	PlasmaRifle(const PlasmaRifle &);
+	PlasmaRifle &operator=(const PlasmaRifle &);
 	~PlasmaRifle();
 	void attack() const;
 };
