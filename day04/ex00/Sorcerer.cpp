@@ -12,6 +12,8 @@ Sorcerer::Sorcerer(const Sorcerer &s)
 {
 	_name = s._name;
 	_title = s._title;
+	std::cout << _name << ", " << _title << ", "
+			  << "is born!" << std::endl;
 }
 
 Sorcerer& Sorcerer::operator=(const Sorcerer &s)
