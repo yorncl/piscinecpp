@@ -3,23 +3,21 @@
 Character::Character(std::string name) : ICharacter()
 {
     _name = name;
-    _inventory[0] = NULL;
-    _inventory[1] = NULL;
-    _inventory[2] = NULL;
-    _inventory[3] = NULL;
+    for (size_t i = 0; i < NB_MATERIA; i++)
+        _inventory[i] = NULL;
 }
 
 Character::Character(const Character &c) : ICharacter()
 {
     _name = c._name;
 
-    for (size_t i = 0; i < 4; i++)
+    for (size_t i = 0; i < NB_MATERIA; i++)
     {
 
         if (c._inventory[i])
             _inventory[i] = c._inventory[i]->clone();
         else
-            _inventory[i] = 0;
+            _inventory[i] = NULL;
     }
 }
 
@@ -27,27 +25,27 @@ Character& Character::operator=(const Character &c)
 {
     _name = c._name;
 
-    for (size_t i = 0; i < 4; i++)
+    for (size_t i = 0; i < NB_MATERIA; i++)
     {
         if (_inventory[i])
             delete _inventory[i];
         if (c._inventory[i])
             _inventory[i] = c._inventory[i]->clone();
         else
-            _inventory[i] = 0;
+            _inventory[i] = NULL;
     }
 }
 
 Character::~Character()
 {
-    for (size_t i = 0; i < 4; i++)
+    for (size_t i = 0; i < NB_MATERIA; i++)
         if (_inventory[i])
             delete _inventory[i];
 }
 
 void Character::equip(AMateria* m)
 {
-    for (size_t i = 0; i < 4; i++)
+    for (size_t i = 0; i < NB_MATERIA; i++)
     {
         if (_inventory[i] == NULL)
         {
@@ -55,7 +53,6 @@ void Character::equip(AMateria* m)
             return ;
         }
     }
-
 }
 
 void Character::unequip(int idx)

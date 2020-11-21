@@ -4,6 +4,8 @@
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
 
+#define NB_MATERIA 4
+
 class Character : public ICharacter
 {
 public:

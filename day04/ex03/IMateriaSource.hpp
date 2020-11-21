@@ -1,5 +1,5 @@
-#if !defined(IMATERIASOURCE)
-#define IMATERIASOURCE
+#if !defined(IMATERIASOURCE_HPP)
+#define IMATERIASOURCE_HPP
 
 #include "AMateria.hpp"
 
@@ -11,4 +11,4 @@ public:
     virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
-#endif // IMATERIASOURCE
+#endif // IMATERIASOURCE_HPP
