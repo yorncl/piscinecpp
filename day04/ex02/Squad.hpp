@@ -16,7 +16,7 @@ t_list *copy_list(t_list *l);
 class Squad : public ISquad
 {
 private:
-	t_list *l;
+	t_list *_list;
 public:
 	Squad();
 	Squad(const Squad &);

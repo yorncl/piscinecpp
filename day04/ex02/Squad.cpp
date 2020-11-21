@@ -2,28 +2,35 @@
 
 Squad::Squad()
 {
-	l = 0;
-}
-
-Squad::~Squad()
-{
-	delete_list(l);
+	_list = 0;
 }
 
 Squad::Squad(const Squad &s)
 {
-	t_list *ptr = l;
+	t_list *ptr = s._list;
 
-	while (ptr)
-	{
-		l = copy_list(s.l);
-		ptr = ptr->next;
-	}
+	if (ptr)
+		_list = copy_list(s._list);
+	else
+		_list = 0;
+	
+}
+
+Squad &Squad::operator=(const Squad &s)
+{
+	delete_list(_list);
+	_list = copy_list(s._list);
+	return *this;
+}
+
+Squad::~Squad()
+{
+	delete_list(_list);
 }
 
 int Squad::getCount() const
 {
-	t_list *ptr = l;
+	t_list *ptr = _list;
 	int r = 0;
 
 	while (ptr)
@@ -36,24 +43,21 @@ int Squad::getCount() const
 
 ISpaceMarine *Squad::getUnit(int i) const
 {
-	t_list *ptr = l;
+	t_list *ptr = _list;
 
 	while (i-- && ptr)
 		ptr = ptr->next;
 	return ptr->marine;
 }
-#include <iostream>
 int Squad::push(ISpaceMarine *sm)
 {
-	if (!l)
+	if (!_list)
 	{
-		l = new t_list();
-		l->marine = sm;
+		_list = new t_list();
+		_list->marine = sm;
 		return 1;
 	}
-	std::cout << "Here !" << l << std::endl;
-	t_list *ptr = l;
-
+	t_list *ptr = _list;
 	while (ptr->next)
 	{
 		if (ptr->marine == sm)
@@ -67,13 +71,6 @@ int Squad::push(ISpaceMarine *sm)
 	return getCount();
 }
 
-Squad &Squad::operator=(const Squad &s)
-{
-	delete_list(l);
-	l = copy_list(s.l);
-	std::cout << "ASSIGNATION ====" << std::endl;
-	return *this;
-}
 
 t_list *copy_list(t_list *l)
 {

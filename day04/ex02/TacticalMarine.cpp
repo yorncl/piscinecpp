@@ -5,15 +5,28 @@ TacticalMarine::TacticalMarine()
 	std::cout << "Tactical Marine ready for battle!" << std::endl;
 }
 
-ISpaceMarine *TacticalMarine::clone() const
+TacticalMarine::TacticalMarine(const TacticalMarine &t)
 {
-	return new TacticalMarine();	
+	(void) t;
+	std::cout << "Tactical Marine ready for battle!" << std::endl;
+}
+
+TacticalMarine& TacticalMarine::operator=(const TacticalMarine &t)
+{
+	(void) t;
+	return *this;
 }
 
 TacticalMarine::~TacticalMarine()
 {
 	std::cout << "Aaargh..." << std::endl;
 }
+
+ISpaceMarine *TacticalMarine::clone() const
+{
+	return new TacticalMarine();	
+}
+
 void TacticalMarine::battleCry() const
 {
 	std::cout << "For the holy PLOT!" << std::endl;

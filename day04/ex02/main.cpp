@@ -6,6 +6,46 @@
 
 int main()
 {
+	std::cout << "========== Construcors and assigment tests ==========" << std::endl;
+	{
+		std::cout << "ASSAULTTERMINATOR" << std::endl;
+		AssaultTerminator a = AssaultTerminator();
+		AssaultTerminator b(a);
+		AssaultTerminator c = AssaultTerminator();
+		c = a;
+		a.battleCry();
+		b.battleCry();
+		c.battleCry();
+	}
+	std::cout << std::endl;
+	{
+		std::cout << "TACTICALMARINE" << std::endl;
+		TacticalMarine a = TacticalMarine();
+		TacticalMarine b(a);
+		TacticalMarine c = TacticalMarine();
+		c = a;
+		a.battleCry();
+		b.battleCry();
+		c.battleCry();
+	}
+	std::cout << std::endl;
+	{
+		std::cout << "SQUAD" << std::endl;
+		Squad s = Squad();
+		s.push(new TacticalMarine());
+		s.push(new TacticalMarine());
+		s.push(new TacticalMarine());
+		Squad s2(s);
+		s.push(new TacticalMarine());
+		Squad s3 = Squad();
+		s3 = s;
+		std::cout << s.getCount() << std::endl;
+		std::cout << s2.getCount() << std::endl;
+		std::cout << s3.getCount() << std::endl;
+	}
+	std::cout << std::endl;
+
+
 	std::cout << "========== Subject Tests ==========" << std::endl;
 	ISpaceMarine *bob = new TacticalMarine;
 	ISpaceMarine *jim = new AssaultTerminator;

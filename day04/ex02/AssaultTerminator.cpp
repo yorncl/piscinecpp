@@ -5,15 +5,28 @@ AssaultTerminator::AssaultTerminator()
 	std::cout << "* teleports from space *" << std::endl;
 }
 
-ISpaceMarine *AssaultTerminator::clone() const
+AssaultTerminator::AssaultTerminator(const AssaultTerminator &a)
 {
-	return new AssaultTerminator();	
+	(void) a;
+	std::cout << "* teleports from space *" << std::endl;
+}
+
+AssaultTerminator& AssaultTerminator::operator=(const AssaultTerminator &a)
+{
+	(void) a;
+	return *this;
 }
 
 AssaultTerminator::~AssaultTerminator()
 {
 	std::cout << "I'll be back..." << std::endl;
 }
+
+ISpaceMarine *AssaultTerminator::clone() const
+{
+	return new AssaultTerminator();	
+}
+
 void AssaultTerminator::battleCry() const
 {
 	std::cout << "This code is unclean. PURIFY IT!" << std::endl;

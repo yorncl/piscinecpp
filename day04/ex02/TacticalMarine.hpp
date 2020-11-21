@@ -9,8 +9,8 @@ class TacticalMarine : public ISpaceMarine
 {
 public:
 	TacticalMarine();
-	TacticalMarine(const TacticalMarine &) = default;
-	TacticalMarine &operator=(const TacticalMarine &) = default;
+	TacticalMarine(const TacticalMarine &);
+	TacticalMarine &operator=(const TacticalMarine &);
 	ISpaceMarine *clone() const;
 	void battleCry() const;
 	void rangedAttack() const;
