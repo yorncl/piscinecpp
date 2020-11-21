@@ -69,3 +69,7 @@ void Character::use(int idx, ICharacter& target)
     }
 }
 
+const std::string &EIcCharacter::getName()
+{
+    return _name;
+}
