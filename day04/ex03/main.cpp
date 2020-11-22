@@ -46,7 +46,13 @@ int main()
             a.equip(new Ice());
             a.equip(new Ice());
             Character b("Gulliver");
-            a.use(0, b);
+            a.use(-54, b);
+            a.use(-1, b);
+            a.use(45, b);
+            a.use(3, b);
+            a.use(2, b);
+            a.use(1, b); // only these wto must work
+            a.use(0, b); // only these wto must work
         }
        
     }
