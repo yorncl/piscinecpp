@@ -20,7 +20,7 @@ public:
     void use(int idx, ICharacter& target);
 
 private:
-    AMateria *_inventory[4];
+    AMateria *_inventory[NB_MATERIA];
     std::string _name;
 };
 
