@@ -17,7 +17,7 @@ AMateria::AMateria(const AMateria &a)
 AMateria& AMateria::operator=(const AMateria &a)
 {
     _xp = a._xp;
-    _type = a._type;
+    return *this;
 }
 
 AMateria::~AMateria()

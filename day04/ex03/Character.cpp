@@ -34,6 +34,7 @@ Character& Character::operator=(const Character &c)
         else
             _inventory[i] = NULL;
     }
+    return *this;
 }
 
 Character::~Character()
@@ -69,7 +70,7 @@ void Character::use(int idx, ICharacter& target)
     }
 }
 
-const std::string &EIcCharacter::getName()
+const std::string& Character::getName() const
 {
     return _name;
 }

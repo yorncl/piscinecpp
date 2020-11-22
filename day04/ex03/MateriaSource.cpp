@@ -29,6 +29,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &m)
         else
             _source[i] = NULL;
     }
+    return *this;
 }
 
 MateriaSource::~MateriaSource()
