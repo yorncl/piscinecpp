@@ -4,14 +4,14 @@ Cure::Cure() : AMateria("cure")
 {
 }
 
-Cure::Cure(const Cure &c) : AMateria(c.getType())
+Cure::Cure(const Cure &c) : AMateria(c)
 {
     (void) c;
 }
 
 Cure &Cure::operator=(const Cure &c)
 {
-    (void) c;
+    AMateria::operator=(c);
     return *this;
 }
 

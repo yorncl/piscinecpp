@@ -4,14 +4,14 @@ Ice::Ice() : AMateria("ice")
 {
 }
 
-Ice::Ice(const Ice &i) : AMateria(i.getType())
+Ice::Ice(const Ice &i) : AMateria(i)
 {
     (void) i;
 }
 
 Ice &Ice::operator=(const Ice &i)
 {
-    (void) i;
+    AMateria::operator=(i);
     return *this;
 }
 
