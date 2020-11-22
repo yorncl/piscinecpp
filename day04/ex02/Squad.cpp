@@ -13,12 +13,12 @@ Squad::Squad(const Squad &s)
 		_list = copy_list(s._list);
 	else
 		_list = 0;
-	
 }
 
 Squad &Squad::operator=(const Squad &s)
 {
-	delete_list(_list);
+	if (_list)
+		delete_list(_list);
 	_list = copy_list(s._list);
 	return *this;
 }

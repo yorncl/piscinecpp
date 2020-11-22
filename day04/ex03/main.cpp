@@ -54,8 +54,10 @@ int main()
             a.use(1, b); // only these last two must work
             a.use(0, b);
         }
-       
     }
+
+    std::cout << "======== Materia tests ========" << std::endl;
+
 
     std::cout << "======== Subject tests ========" << std::endl;
     {
