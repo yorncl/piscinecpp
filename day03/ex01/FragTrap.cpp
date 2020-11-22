@@ -92,13 +92,13 @@ void FragTrap::takeDamage(unsigned int amount)
 		if (_hit <= 0)
 		{
 			_hit = 0;
-			std::cout << "FR4G-TP " << _name << " just got beaten up to death!" << std::endl;
+			std::cout << _name << " just got beaten up to death!" << std::endl;
 		}
 		else
-			std::cout << "FR4G-TP " << _name << " takes " << amount << " damages, losing " << oof << " points of HP!" << std::endl;
+			std::cout << _name << " takes " << amount << " damages, losing " << oof << " points of HP!" << std::endl;
 	}
 	else
-		std::cout << "FR4G-TP " << _name << " takes " << amount << " damages, but is protected by his armor!" << std::endl;
+		std::cout << _name << " takes " << amount << " damages, but is protected by his armor!" << std::endl;
 };
 
 void FragTrap::beRepaired(unsigned int amount)
@@ -108,7 +108,7 @@ void FragTrap::beRepaired(unsigned int amount)
 	{
 		_hit = _maxHit;
 	}
-	std::cout << "FR4G-TP " << _name << " is now " << _hit << " HP !" << std::endl;
+	std::cout << _name << " is now " << _hit << " HP !" << std::endl;
 };
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
