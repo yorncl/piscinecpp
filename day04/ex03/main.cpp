@@ -51,8 +51,8 @@ int main()
             a.use(45, b);
             a.use(3, b);
             a.use(2, b);
-            a.use(1, b); // only these wto must work
-            a.use(0, b); // only these wto must work
+            a.use(1, b); // only these last two must work
+            a.use(0, b);
         }
        
     }
