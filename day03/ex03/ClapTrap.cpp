@@ -56,32 +56,6 @@ void ClapTrap::addEnergy(int amount)
 		_energy = _maxEnergy;
 }
 
-void ClapTrap::rangedAttack(std::string const &target)
-{
-	if (!_hit)
-		std::cout << _name << " NEEDS REPAIR" << std::endl;
-	if (_energy < 10)
-		std::cout << _name << " NEEDS ENERGY" << std::endl;
-	if (_hit && _energy >= 10)
-	{
-		addEnergy(-10);
-		std::cout << _name << " attacks " << target << " at range, causing " << _ranged << " points of damage!" << std::endl;
-	}
-}
-
-void ClapTrap::meleeAttack(std::string const &target)
-{
-	if (!_hit)
-		std::cout << _name << " NEEDS REPAIR" << std::endl;
-	if (_energy < 10)
-		std::cout << _name << " NEEDS ENERGY" << std::endl;
-	if (_hit && _energy >= 10)
-	{
-		addEnergy(-10);
-		std::cout << _name << " attacks " << target << " at melee, causing " << _melee << " points of damage!" << std::endl;
-	}
-}
-
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	int oof = amount;

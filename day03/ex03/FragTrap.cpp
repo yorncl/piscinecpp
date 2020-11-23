@@ -45,6 +45,32 @@ FragTrap::~FragTrap()
 	std::cout << "FR4G-TP " << _name << " is desructed!" << std::endl;
 }
 
+void FragTrap::rangedAttack(std::string const &target)
+{
+	if (!_hit)
+		std::cout << "FR4G-TP " << _name << " NEEDS REPAIR" << std::endl;
+	if (_energy < 10)
+		std::cout << "FR4G-TP " << _name << " NEEDS ENERGY" << std::endl;
+	if (_hit && _energy >= 10)
+	{
+		addEnergy(-10);
+		std::cout << "FR4G-TP " << _name << " attacks " << target << " at range, causing " << _ranged << " points of damage!" << std::endl;
+	}
+};
+
+void FragTrap::meleeAttack(std::string const &target)
+{
+	if (!_hit)
+		std::cout << "FR4G-TP " << _name << " NEEDS REPAIR" << std::endl;
+	if (_energy < 10)
+		std::cout << "FR4G-TP " << _name << " NEEDS ENERGY" << std::endl;
+	if (_hit && _energy >= 10)
+	{
+		addEnergy(-10);
+		std::cout << "FR4G-TP " << _name << " attacks " << target << " at melee, causing " << _melee << " points of damage!" << std::endl;
+	}
+};
+
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
 	std::string attacks[] = {"Dab sur", "dance la polka sur", "apprends le suedois à", "detruit les espoirs de", "report pour wall-hack ce satané"};

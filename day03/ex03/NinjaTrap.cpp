@@ -45,6 +45,32 @@ NinjaTrap::~NinjaTrap()
 	std::cout << "NINJA-TP " << _name << " is desructed!" << std::endl;
 }
 
+void NinjaTrap::rangedAttack(std::string const &target)
+{
+	if (!_hit)
+		std::cout << "NINJA-TP " << _name << " NEEDS REPAIR" << std::endl;
+	if (_energy < 10)
+		std::cout << "NINJA-TP " << _name << " NEEDS ENERGY" << std::endl;
+	if (_hit && _energy >= 10)
+	{
+		addEnergy(-10);
+		std::cout << "NINJA-TP " << _name << " attacks " << target << " at range, causing " << _ranged << " points of damage!" << std::endl;
+	}
+}
+
+void NinjaTrap::meleeAttack(std::string const &target)
+{
+	if (!_hit)
+		std::cout << "NINJA-TP " << _name << " NEEDS REPAIR" << std::endl;
+	if (_energy < 10)
+		std::cout << "NINJA-TP " << _name << " NEEDS ENERGY" << std::endl;
+	if (_hit && _energy >= 10)
+	{
+		addEnergy(-10);
+		std::cout << "NINJA-TP " << _name << " attacks " << target << " at melee, causing " << _melee << " points of damage!" << std::endl;
+	}
+}
+
 void NinjaTrap::ninjaShoebox(ScavTrap& s)
 {
 	s.takeDamage(10);

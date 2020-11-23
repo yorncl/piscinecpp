@@ -50,3 +50,30 @@ void ScavTrap::challengeNewcomer()
 	std::string attacks[] = {"doing a backflip", "doing a barrell roll", "going to jail", "playing minecraft", "buying groceries"};
 	std::cout << "SCAV-TP " << _name << " is " << attacks[std::rand() % 5]  << " !" << std::endl;
 }
+
+
+void ScavTrap::rangedAttack(std::string const &target)
+{
+	if (!_hit)
+		std::cout << "SCAV-TP " << _name << " NEEDS REPAIR" << std::endl;
+	if (_energy < 10)
+		std::cout << "SCAV-TP " << _name << " NEEDS ENERGY" << std::endl;
+	if (_hit && _energy >= 10)
+	{
+		addEnergy(-10);
+		std::cout << "SCAV-TP " << _name << " attacks " << target << " at range, causing " << _ranged << " points of damage!" << std::endl;
+	}
+};
+
+void ScavTrap::meleeAttack(std::string const &target)
+{
+	if (!_hit)
+		std::cout << "SCAV-TP " << _name << " NEEDS REPAIR" << std::endl;
+	if (_energy < 10)
+		std::cout << "SCAV-TP " << _name << " NEEDS ENERGY" << std::endl;
+	if (_hit && _energy >= 10)
+	{
+		addEnergy(-10);
+		std::cout << "SCAV-TP " << _name << " attacks " << target << " at melee, causing " << _melee << " points of damage!" << std::endl;
+	}
+};
