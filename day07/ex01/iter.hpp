@@ -1,27 +1,15 @@
 #if !defined(WHATEVER_HPP)
 #define WHATEVER_HPP
 
+#include <cstdlib>
+
 template<typename T>
-void swap(T &a, T &b)
+void iter(T* arr, size_t size, void (*func)(T& elem))
 {
-    T *p1 = &a;
-    T *p2 = &b;
-    T tmp = a;
-    
-    *p1 = *p2;
-    *p2 = tmp;
-}
-
-template <typename T>
-T min(T &a, T &b)
-{
-    return a < b ? a : b;
-}
-
-template <typename T>
-T max(T &a, T &b)
-{
-    return a > b ? a : b;
+    for (size_t i = 0; i < size; i++)
+    {
+        func(arr[i]);
+    }
 }
 
 #endif // WHATEVER_HPP
