@@ -11,21 +11,24 @@
 class NinjaTrap : public virtual ClapTrap
 {
 protected:
-	static int const init_hit = 60;
-	static int const init_maxHit = 60;
-	static int const init_energy = 120;
-	static int const init_maxEnergy = 120;
-	static int const init_level = 1;
-	static int const init_melee = 60;
-	static int const init_ranged = 5;
-	static int const init_armor = 0;
+	static int const init_hit;
+	static int const init_maxHit;
+	static int const init_energy;
+	static int const init_maxEnergy;
+	static int const init_level;
+	static int const init_melee;
+	static int const init_ranged;
+	static int const init_armor;
 public:
 	NinjaTrap(std::string);
 	NinjaTrap(const NinjaTrap &);
 	NinjaTrap &operator=(const NinjaTrap &);
 	~NinjaTrap();
+	void rangedAttack(std::string const &target);
+	void meleeAttack(std::string const &target);
 	void ninjaShoebox(ScavTrap&);
 	void ninjaShoebox(FragTrap&);
 	void ninjaShoebox(NinjaTrap&);
+	void ninjaShoebox(ClapTrap&);
 };
 #endif // SCAVTRAP_HPP

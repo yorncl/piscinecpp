@@ -13,7 +13,6 @@ public:
 	SuperTrap(const SuperTrap &);
 	SuperTrap &operator=(const SuperTrap &);
 	~SuperTrap();
-	void printAttributes();
 	using FragTrap::rangedAttack;
 	using NinjaTrap::meleeAttack;
 };

@@ -23,7 +23,7 @@ SuperTrap::SuperTrap(const SuperTrap &f) : ClapTrap(f._name), FragTrap(f._name),
 	_melee = f._melee;
 	_ranged = f._ranged;
 	_armor = f._armor;
-	std::cout << "NINJA-TP " << _name << " is born!" << std::endl;
+	std::cout << "SUPER-TP " << _name << " is born!" << std::endl;
 }
 
 SuperTrap& SuperTrap::operator=(const SuperTrap &f)
