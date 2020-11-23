@@ -1,5 +1,5 @@
-#if !defined(WHATEVER_HPP)
-#define WHATEVER_HPP
+#if !defined(ITER_HPP)
+#define ITER_HPP
 
 #include <cstdlib>
 
