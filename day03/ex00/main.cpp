@@ -43,7 +43,14 @@ int main(void)
 	f3.rangedAttack("Zer0");
 	f3.rangedAttack("Zer0");
 	f3.rangedAttack("Zer0");
+	f3.rangedAttack("Zer0");
+	f3.rangedAttack("Zer0");
+	f3.rangedAttack("Zer0");
+	f3.rangedAttack("Zer0");
+	f3.rangedAttack("Zer0");
+	f3.rangedAttack("Zer0");
 	// SHOULD BE OUT OF ENERGY
+	f3.rangedAttack("Zer0");
 	f3.rangedAttack("Zer0");
 
 	std::cout << std::endl << "========= Take Damage/Be repaired ==========" << std::endl;
@@ -58,6 +65,7 @@ int main(void)
 	f3.rangedAttack("Zer0");
 
 	std::cout << std::endl << "========= Vaulthunter ==========" << std::endl;
+	f4.addEnergy(500); //put energy to max energy
 	f4.vaulthunter_dot_exe("Psycho");
 	f4.vaulthunter_dot_exe("Psycho");
 	f4.vaulthunter_dot_exe("Psycho");

@@ -71,7 +71,7 @@ int main(int ac, char** av)
 		f3.beRepaired(500);
 		f3.rangedAttack("Zer0");
 
-		std::cout << std::endl << "========= Vaulthunter ==========" << std::endl;
+		std::cout << std::endl << "========= Challenge Newcomer ==========" << std::endl;
 		f4.challengeNewcomer();
 		f4.challengeNewcomer();
 		f4.challengeNewcomer();

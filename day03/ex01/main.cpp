@@ -63,7 +63,7 @@ int main(int ac, char** av)
 		f3.beRepaired(500);
 		f3.rangedAttack("Zer0");
 
-		std::cout << std::endl << "========= Vaulthunter ==========" << std::endl;
+		std::cout << std::endl << "========= Challenge Newcomer ==========" << std::endl;
 		f4.challengeNewcomer();
 		f4.challengeNewcomer();
 		f4.challengeNewcomer();
@@ -86,7 +86,7 @@ int main(int ac, char** av)
 	}
 	else if (strcmp(av[1], "frag") == 0)
 	{
-			std::srand(std::time(0)); // init random seed
+		std::srand(std::time(0)); // init random seed
 
 		std::cout << std::endl << "========= Basic constructor =========" << std::endl;
 		FragTrap *f1 = new FragTrap("Brigitte");
@@ -131,10 +131,10 @@ int main(int ac, char** av)
 		f3.rangedAttack("Zer0");
 		// SHOULD BE OUT OF ENERGY
 		f3.rangedAttack("Zer0");
+		f3.rangedAttack("Zer0");
 
 		std::cout << std::endl << "========= Take Damage/Be repaired ==========" << std::endl;
 		f3.addEnergy(500);
-		f3.takeDamage(3);
 		f3.takeDamage(10);
 		f3.rangedAttack("Zer0");
 		f3.takeDamage(1000);
@@ -145,7 +145,7 @@ int main(int ac, char** av)
 		f3.rangedAttack("Zer0");
 
 		std::cout << std::endl << "========= Vaulthunter ==========" << std::endl;
-		f4.addEnergy(500);
+		f4.addEnergy(500); //put energy to max energy
 		f4.vaulthunter_dot_exe("Psycho");
 		f4.vaulthunter_dot_exe("Psycho");
 		f4.vaulthunter_dot_exe("Psycho");
