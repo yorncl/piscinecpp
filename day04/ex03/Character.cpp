@@ -1,5 +1,12 @@
 #include "Character.hpp"
 
+Character::Character()
+{
+    _name = "default";
+    for (size_t i = 0; i < NB_MATERIA; i++)
+        _inventory[i] = NULL;
+}
+
 Character::Character(std::string name) : ICharacter()
 {
     _name = name;

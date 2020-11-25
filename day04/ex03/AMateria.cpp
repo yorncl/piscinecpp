@@ -1,6 +1,13 @@
 #include "AMateria.hpp"
 
 
+AMateria::AMateria()
+{
+    _xp = 0;
+    _type = "default";
+}
+
+
 AMateria::AMateria(std::string const &type)
 {
     _xp = 0;

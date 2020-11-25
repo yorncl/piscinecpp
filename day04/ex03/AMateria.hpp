@@ -14,6 +14,7 @@ private:
 	unsigned int _xp;
 
 public:
+	AMateria();
 	AMateria(std::string const &type);
 	AMateria(const AMateria &);
 	AMateria& operator=(const AMateria &);
