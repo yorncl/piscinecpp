@@ -1,6 +1,7 @@
 #if !defined(SQUAD)
 #define SQUAD
 
+#include <cstdlib>
 #include "ISquad.hpp"
 #include "ISpaceMarine.hpp"
 

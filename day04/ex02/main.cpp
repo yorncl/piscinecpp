@@ -78,6 +78,10 @@ int main()
 		std::cout << "addr:" << cur << std::endl;
 		cur->battleCry();
 	}
+	std::cout << "=== Out of bound ====" << std::endl;
+	
+	std::cout << list1.getUnit(-253) << std::endl;
+	std::cout << list1.getUnit(253) << std::endl;
 	std::cout << "===> Second list 1" << std::endl;
 	for (int i = 0; i < list2.getCount(); ++i)
 	{

@@ -2,7 +2,7 @@
 
 Squad::Squad()
 {
-	_list = 0;
+	_list = NULL;
 }
 
 Squad::Squad(const Squad &s)
@@ -45,9 +45,11 @@ ISpaceMarine *Squad::getUnit(int i) const
 {
 	t_list *ptr = _list;
 
+	if (i < 0)
+		return(NULL);
 	while (i-- && ptr)
 		ptr = ptr->next;
-	return ptr->marine;
+	return ptr ? ptr->marine : NULL;
 }
 int Squad::push(ISpaceMarine *sm)
 {
