@@ -4,10 +4,10 @@ Sorcerer::Sorcerer()
 {
 }
 
-Sorcerer::Sorcerer(std::string n, std::string t)
+Sorcerer::Sorcerer(std::string name, std::string title)
 {
-	_name = n;
-	_title = t;
+	_name = name;
+	_title = title;
 	std::cout << _name << ", " << _title << ", "
 			  << "is born!" << std::endl;
 }
