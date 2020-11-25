@@ -18,6 +18,7 @@ public:
 	void polymorph(Victim const &) const;
 
 private:
+	Sorcerer();
 	std::string _name, _title;
 };
 

@@ -8,6 +8,7 @@
 class Peon : public Victim
 {
 public:
+	Peon();
 	Peon(std::string);
 	Peon(const Peon &);
 	Peon &operator=(const Peon &);

@@ -7,6 +7,7 @@
 class Victim
 {
 public:
+	Victim();
 	Victim(std::string);
 	Victim(const Victim &);
 	Victim &operator=(const Victim &);

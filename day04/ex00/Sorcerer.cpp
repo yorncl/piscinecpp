@@ -1,5 +1,13 @@
 #include "Sorcerer.hpp"
 
+Sorcerer::Sorcerer()
+{
+	_name = "default";
+	_title = "default";
+	std::cout << _name << ", " << _title << ", "
+			  << "is born!" << std::endl;
+}
+
 Sorcerer::Sorcerer(std::string n, std::string t)
 {
 	_name = n;
