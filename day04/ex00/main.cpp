@@ -14,7 +14,6 @@ int main(void)
 		std::cout << s;
 		std::cout << s2;
 		std::cout << s3;
-		// Sorcerer *p = new Sorcerer[5];
 	}
 	std::cout << std::endl;
 	{
