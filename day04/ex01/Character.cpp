@@ -1,7 +1,17 @@
 #include "Character.hpp"
 
-Character::Character(std::string const &name) : _name(name), _ap(40), _weapon(0)
+Character::Character()
 {
+	_name = "default";
+	_ap = CHARACTER_MAX_AP;
+	_weapon = NULL;
+}
+
+Character::Character(std::string const &name)
+{
+	_name = name;
+	_ap = CHARACTER_MAX_AP;
+	_weapon = NULL;
 }
 
 Character::Character(const Character& c)
@@ -26,8 +36,8 @@ Character::~Character()
 void Character::recoverAP()
 {
 	_ap += 10;
-	if (_ap > 40)
-		_ap = 40;	
+	if (_ap > CHARACTER_MAX_AP)
+		_ap = CHARACTER_MAX_AP;	
 }
 
 void Character::equip(AWeapon *w)

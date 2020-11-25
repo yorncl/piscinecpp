@@ -1,11 +1,24 @@
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon(std::string const &name, int apcost, int damage) : _name(name), _apcost(apcost), _damage(damage)
+AWeapon::AWeapon()
 {
+	_name = "default";
+	_apcost = 0;
+	_damage = 0;
 }
 
-AWeapon::AWeapon(const AWeapon &a) : _name(a._name), _apcost(a._apcost), _damage(a._damage)
+AWeapon::AWeapon(std::string const &name, int apcost, int damage)
 {
+	_name = name;
+	_apcost = apcost;
+	_damage = damage;
+}
+
+AWeapon::AWeapon(const AWeapon &a)
+{
+	_name = a._name;
+	_apcost = a._apcost;
+	_damage = a._damage;
 }
 
 AWeapon& AWeapon::operator=(const AWeapon& a)

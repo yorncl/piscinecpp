@@ -1,12 +1,21 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy(int hp, std::string const &type) : _hp(hp), _type(type)
+Enemy::Enemy()
 {
+	_hp = 0;
+	_type = "default";
 }
 
-Enemy::Enemy(const Enemy& e) : _hp(e._hp), _type(e._type)
+Enemy::Enemy(int hp, std::string const &type)
 {
+	_hp = hp;
+	_type = type;
+}
 
+Enemy::Enemy(const Enemy& e)
+{
+	_hp = e._hp;
+	_type = e._type;
 }
 
 Enemy& Enemy::operator=(const Enemy &e)

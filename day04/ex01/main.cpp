@@ -18,6 +18,21 @@ int main()
 		std::cout << "a type: " << a.getType() << "  hp: " << a.getHP() << std::endl;
 		std::cout << "b type: " << b.getType() << "  hp: " << b.getHP() << std::endl;
 		std::cout << "c type: " << c.getType() << "  hp: " << c.getHP() << std::endl;
+		Enemy *ep = new Enemy[3];
+		delete[] ep;
+	}
+	std::cout << std::endl;
+	{
+		std::cout << "CHARACTER" << std::endl;
+		Character a("Test");
+		Character b(a);
+		Character c("okidoki");
+		c = a;
+		std::cout << "a name: " << a.getName() << "  hp: " << a.getAp() << std::endl;
+		std::cout << "b name: " << b.getName() << "  hp: " << b.getAp() << std::endl;
+		std::cout << "c name: " << c.getName() << "  hp: " << c.getAp() << std::endl;
+		Character *ep = new Character[3];
+		delete[] ep;
 	}
 	std::cout << std::endl;
 	{

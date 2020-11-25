@@ -7,6 +7,8 @@
 #include <iostream>
 #include <string>
 
+#define CHARACTER_MAX_AP 40	
+
 class Character
 {
 private:
@@ -15,6 +17,7 @@ private:
 	AWeapon *_weapon;
 
 public:
+	Character();
 	Character(std::string const &name);
 	Character(const Character&);
 	Character& operator=(const Character&);

@@ -7,6 +7,7 @@ class AWeapon
 {
 
 public:
+	AWeapon();
 	AWeapon(std::string const &name, int apcost, int damage);
 	AWeapon(const AWeapon &);
 	AWeapon& operator=(const AWeapon &);
