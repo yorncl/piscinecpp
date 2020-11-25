@@ -2,12 +2,12 @@
 
 SuperMutant::SuperMutant() : Enemy(170, "Super mutant")
 {
-	std::cout << "aaah. Me want smash heads!" << std::endl;
+	std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 
 SuperMutant::SuperMutant(const SuperMutant &s) : Enemy(s.getHP(), s.getType())
 {
-	std::cout << "aaah. Me want smash heads!" << std::endl;
+	std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 
 SuperMutant& SuperMutant::operator=(const SuperMutant &s)

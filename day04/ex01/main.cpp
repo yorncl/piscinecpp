@@ -38,6 +38,7 @@ int main()
 	{
 		std::cout << "RADSCORPION" << std::endl;
 		RadScorpion a = RadScorpion();
+		a.takeDamage(10);
 		RadScorpion b(a);
 		RadScorpion c = RadScorpion();
 		c = a;
@@ -49,6 +50,7 @@ int main()
 	{
 		std::cout << "SUPERMUTANT" << std::endl;
 		SuperMutant a = SuperMutant();
+		a.takeDamage(10);
 		SuperMutant b(a);
 		SuperMutant c = SuperMutant();
 		c = a;
@@ -98,8 +100,6 @@ int main()
 		std::cout << *me;
 		me->attack(b);
 		std::cout << *me;
-		
-		std::cout << b << std::endl;
 		delete me;
 		delete pr;
 		delete pf;

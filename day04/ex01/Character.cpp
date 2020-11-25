@@ -58,7 +58,7 @@ void Character::attack(Enemy *enemy)
 	_ap -= apcost;
 }
 
-std::string const Character::getName() const
+std::string const &Character::getName() const
 {
 	return _name;
 }
