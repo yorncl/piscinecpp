@@ -14,11 +14,11 @@ private:
 	bool _sig;
 	const int _gradeSign;
 	const int _gradeEx;
-	struct GradeTooHighException : public std::exception
+	class GradeTooHighException : public std::exception
 	{
 		const char * what () const throw ();
 	};
-	struct GradeTooLowException : public std::exception
+	class GradeTooLowException : public std::exception
 	{
 		const char * what () const throw ();
 	};
