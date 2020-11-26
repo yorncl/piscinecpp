@@ -10,7 +10,7 @@ class Form
 {
 protected:
 	const std::string _name;
-	std::string target;
+	std::string _target;
 	bool _sig;
 	const int _gradeSign;
 	const int _gradeEx;

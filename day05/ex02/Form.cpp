@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(std::string name, std::string target, int gs, int gex) : _name(name), target(target),_sig(false), gradeSign(gs), _gradeEx(gex)
+Form::Form(std::string name, std::string target, int gs, int gex) : _name(name), _target(target),_sig(false), _gradeSign(gs), _gradeEx(gex)
 {
 	if (gs < 1 || gex < 1)
 		throw GradeTooHighException();
@@ -8,7 +8,7 @@ Form::Form(std::string name, std::string target, int gs, int gex) : _name(name),
 		throw GradeTooLowException();
 }
 
-Form::Form(const Form &f) : _name(f._name), gradeSign(f.gradeSign), _gradeEx(f._gradeEx)
+Form::Form(const Form &f) : _name(f._name), _gradeSign(f._gradeSign), _gradeEx(f._gradeEx)
 {
 	_sig = f._sig;
 }
@@ -48,7 +48,7 @@ std::string Form::getName() const
 
 int Form::getGradeSign() const
 {
-	return gradeSign;
+	return _gradeSign;
 }
 
 int Form::getGradeEx() const
@@ -63,12 +63,12 @@ bool Form::getSigned() const
 
 std::string Form::getTarget() const
 {
-	return target;
+	return _target;
 }
 
 void Form::beSigned(Bureaucrat& b)
 {
-	if (b.getGrade() > gradeSign)
+	if (b.getGrade() > _gradeSign)
 		throw GradeTooLowException();
 	_sig = true;
 }

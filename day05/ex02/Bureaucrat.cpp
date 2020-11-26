@@ -1,24 +1,24 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string n, int g) : name(n)
+Bureaucrat::Bureaucrat(std::string n, int g) : _name(n)
 {
 	if (g < 1)
 		throw GradeTooHighException();
 	if (g > 150)
 		throw GradeTooLowException();
-	grade = g;
+	_grade = g;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &b) : name(b.name)
+Bureaucrat::Bureaucrat(const Bureaucrat &b) : _name(b._name)
 {
-	grade = b.grade;
+	_grade = b._grade;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &b)
 {
 	// name is a constant
-	grade = b.grade;
+	_grade = b._grade;
 	return *this;
 }
 
@@ -39,29 +39,29 @@ const char * Bureaucrat::GradeTooLowException::what () const throw ()
 
 std::string Bureaucrat::getName() const
 {
-	return name;
+	return _name;
 }
 
 int Bureaucrat::getGrade() const
 {
-	return grade;
+	return _grade;
 }
 
 void Bureaucrat::inc()
 {
-	grade--;
-	if (grade < 1)
+	_grade--;
+	if (_grade < 1)
 		throw GradeTooHighException();
-	if (grade > 150)
+	if (_grade > 150)
 		throw GradeTooLowException();
 }
 
 void Bureaucrat::dec()
 {
-	grade++;
-	if (grade < 1)
+	_grade++;
+	if (_grade < 1)
 		throw GradeTooHighException();
-	if (grade > 150)
+	if (_grade > 150)
 		throw GradeTooLowException();
 }
 
@@ -70,11 +70,11 @@ void Bureaucrat::signForm(Form& f)
 	try
 	{
 		f.beSigned(*this);
-		std::cout << name << " signs " << f.getName() << std::endl;
+		std::cout << _name << " signs " << f.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << name << " cannot sign " << f.getName() << " because " << e.what() << std::endl;
+		std::cout << _name << " cannot sign " << f.getName() << " because " << e.what() << std::endl;
 	}
 }
 
@@ -83,11 +83,11 @@ void Bureaucrat::executeForm(Form const & form)
 	try
 	{
 		form.execute(*this);
-		std::cout << name << " executed " << form.getName() << std::endl;
+		std::cout << _name << " executed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << name << " cannot execute " << form.getName() << ": " << e.what() << std::endl;
+		std::cerr << _name << " cannot execute " << form.getName() << ": " << e.what() << std::endl;
 	}
 }
 

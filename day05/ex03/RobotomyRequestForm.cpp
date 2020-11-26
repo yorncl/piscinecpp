@@ -6,12 +6,12 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("robotomy re
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &f)
 {
-	target = f.target;
+	_target = f._target;
 	_sig = f._sig;
 	return *this;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &f) : Form(f._name , f.target, f.gradeSign, f._gradeEx)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &f) : Form(f._name , f._target, f.gradeSign, f._gradeEx)
 {
 }
 

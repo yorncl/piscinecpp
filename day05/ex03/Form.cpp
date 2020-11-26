@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(std::string name, std::string target, int gs, int gex) : _name(name), target(target),_sig(false), gradeSign(gs), _gradeEx(gex)
+Form::Form(std::string name, std::string target, int gs, int gex) : _name(name), _target(target),_sig(false), gradeSign(gs), _gradeEx(gex)
 {
 	if (gs < 1 || gex < 1)
 		throw GradeTooHighException();
@@ -63,7 +63,7 @@ bool Form::getSigned() const
 
 std::string Form::getTarget() const
 {
-	return target;
+	return _target;
 }
 
 void Form::beSigned(Bureaucrat& b)

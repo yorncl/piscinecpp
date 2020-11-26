@@ -8,13 +8,13 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &f) : Form(f._name , f.target, f.gradeSign, f._gradeEx)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &f) : Form(f._name , f._target, f.gradeSign, f._gradeEx)
 {
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &f)
 {
-	target = f.target;
+	_target = f._target;
 	_sig = f._sig;
 	return *this;
 }

@@ -12,8 +12,8 @@ class Bureaucrat
 {
 
 private:
-	const std::string name;
-	int grade;
+	const std::string _name;
+	int _grade;
 	struct GradeTooHighException : public std::exception
 	{
 		const char * what () const throw ();

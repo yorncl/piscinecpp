@@ -27,6 +27,7 @@ std::cout << "===== ROBOTOMY =======" << std::endl;
 	c.executeForm(*f1);
 	c.executeForm(*f1);
 	c.executeForm(*f1);
+	delete f1;
 	
 std::cout << "===== SHRUBBERY =======" << std::endl;
 	Form *f2 = new ShrubberyCreationForm("Hi doggy");
@@ -35,6 +36,7 @@ std::cout << "===== SHRUBBERY =======" << std::endl;
 	c.signForm(*f2);
 	nulos.executeForm(*f2);
 	c.executeForm(*f2);
+	delete f2;
 
 std::cout << "===== PRESIDENTIAL =======" << std::endl;
 	Form *f3 = new PresidentialPardonForm("Le capitalisme");
@@ -45,6 +47,7 @@ std::cout << "===== PRESIDENTIAL =======" << std::endl;
 	bob.executeForm(*f3);
 	Bureaucrat chief("Chief", 1);
 	chief.executeForm(*f3);
+	delete f3;
 
 	return 0;
 }
