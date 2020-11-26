@@ -127,6 +127,7 @@ int main()
 		me->recoverAP();
 		me->attack(s);
 		me->recoverAP();
+		me->equip(pr);
 		me->attack(s);
 		me->recoverAP();
 		me->attack(s);
