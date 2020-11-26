@@ -8,6 +8,7 @@ int main()
     std::cout << "======== Character tests ========" << std::endl;
     {
         {
+            std::cout << "CONSTRUCTORS / ASSIGNMENT" << std::endl;
             Character a("bob le bricoleur");
             a.equip(new Ice());
             Character b(a);
@@ -23,10 +24,15 @@ int main()
             a.use(0, d);
             b.use(0, d);
             c.use(0, d);
+
+            // Compiles if default constructor is accessible
+            Character *cp = new Character[5];
+            delete[] cp;
         }
 
         // Delete while assignment
         {
+            std::cout << "DELETE WHILE ASSIGMENT" << std::endl;
             Character a("dora l'exploratrice");
             a.equip(new Ice());
             a.equip(new Ice());
@@ -39,9 +45,11 @@ int main()
             b.equip(new Cure());
             a = b;
             a.use(0, b);
+            a.use(1, b); // should do nothing
         }
         //Range tests
         {
+            std::cout << "RANGE" << std::endl;
             Character a("Gargantua");
             a.equip(new Ice());
             a.equip(new Ice());
@@ -58,12 +66,13 @@ int main()
     std::cout << std::endl;
     std::cout << "======== Materia Source tests ========" << std::endl;
     {
-        // Constructor and assignation tests
+        std::cout << "CONSTRUCTORS / ASSIGNMENT" << std::endl;
         MateriaSource m = MateriaSource();
-        m.learnMateria(new Cure());
+        AMateria *tmp = new Cure();
+        m.learnMateria(tmp);
         MateriaSource m2(m);
         MateriaSource m3 = MateriaSource();
-        m3.learnMateria(new Cure());
+        m3.learnMateria(tmp);
         m3 = m;
 
         AMateria *p1; AMateria *p2; AMateria *p3;
@@ -78,14 +87,16 @@ int main()
         delete p1;
         delete p2;
         delete p3;
+        delete tmp;
     }
     {
-        // Range tests
+        std::cout << "RANGE" << std::endl;
         MateriaSource *m = new MateriaSource();
-        m->learnMateria(new Ice());
-        m->learnMateria(new Ice());
-        m->learnMateria(new Ice());
-        m->learnMateria(new Ice());
+        AMateria *tmp = new Ice();
+        m->learnMateria(tmp);
+        m->learnMateria(tmp);
+        m->learnMateria(tmp);
+        m->learnMateria(tmp);
         AMateria *p = new Cure();
         m->learnMateria(p); // should do nothing
         std::cout << "Should be null: " << m->createMateria("cure") << std::endl;
@@ -93,14 +104,15 @@ int main()
         p = m->createMateria("ice");
         std::cout << "Should NOT be null: " << p << std::endl;
 
+        delete tmp;
         delete p;
         delete m;
     }
     std::cout << std::endl;
     std::cout << "======== Materia tests ========" << std::endl;
     {
-        // Constructors, copy and assignment
         {
+            std::cout << "CONSTRUCTORS / ASSIGNMENT" << std::endl;
             Cure *a = new Cure();
             Character c = Character("dummy");
             std::cout << "type: " << a->getType() << std::endl;
@@ -114,6 +126,7 @@ int main()
             delete a;
         }
         {
+            std::cout << "USE" << std::endl;
             Ice *a = new Ice();
             Character c = Character("dummy");
             std::cout << "type: " << a->getType() << std::endl;
@@ -127,18 +140,18 @@ int main()
             delete a;
         }
         {
-            // Cloning
+            std::cout << "CLONING" << std::endl;
             AMateria *m;
             AMateria *test;
             m = new Ice();
             test = m->clone();
-            std::cout << "Should be ice: " << test->getType() << test->getXP() << std::endl;
+            std::cout << "Should be ice: " << test->getType() << " with xp " << test->getXP() << std::endl;
             std::cout << test << " vs " << m << std::endl;
             delete m;
             delete test;
             m = new Cure();
             test = m->clone();
-            std::cout << "Should be cure: " << test->getType() << test->getXP() << std::endl;
+            std::cout << "Should be cure: " << test->getType() << " with xp " << test->getXP() << std::endl;
             std::cout << test << " vs " << m << std::endl;
             delete m;
             delete test;
@@ -148,10 +161,13 @@ int main()
     std::cout << "======== Subject tests ========" << std::endl;
     {
         IMateriaSource* src = new MateriaSource();
-        src->learnMateria(new Ice());
-        src->learnMateria(new Cure());
+        AMateria *tmp = new Ice();
+        src->learnMateria(tmp);
+        delete tmp;
+        tmp = new Cure();
+        src->learnMateria(tmp);
+        delete tmp;
         ICharacter* me = new Character("me");
-        AMateria* tmp;
         tmp = src->createMateria("ice");
         me->equip(tmp);
         tmp = src->createMateria("cure");

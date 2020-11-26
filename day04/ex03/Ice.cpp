@@ -19,7 +19,6 @@ Ice::~Ice()
 {
 }
 
-
 void Ice::use(ICharacter &target)
 {
     AMateria::use(target);
