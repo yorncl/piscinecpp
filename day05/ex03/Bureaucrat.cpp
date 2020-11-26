@@ -1,6 +1,11 @@
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat() : _name("default")
+{
+	_grade = 150;
+}
+
 Bureaucrat::Bureaucrat(std::string n, int g) : _name(n)
 {
 	if (g < 1)

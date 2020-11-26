@@ -23,6 +23,7 @@ private:
 		const char * what () const throw ();
 	};
 public:
+	Bureaucrat();
 	Bureaucrat(std::string name, int grade);
 	Bureaucrat(const Bureaucrat &);
 	Bureaucrat &operator=(const Bureaucrat &);

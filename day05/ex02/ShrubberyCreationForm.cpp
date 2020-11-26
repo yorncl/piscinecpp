@@ -1,5 +1,9 @@
 #include "ShrubberyCreationForm.hpp"
 
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("shrubbery creation form", "default", 145, 137)
+{
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("shrubbery creation form", target, 145, 137)
 {
 }

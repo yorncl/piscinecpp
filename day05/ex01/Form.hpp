@@ -23,6 +23,7 @@ private:
 		const char * what () const throw ();
 	};
 public:
+	Form();
 	Form(std::string, int, int);
 	Form(const Form &);
 	Form &operator=(const Form &);

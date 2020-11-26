@@ -1,5 +1,9 @@
 #include "Form.hpp"
 
+Form::Form() :_name("default"), _sig(false), _gradeSign(150), _gradeEx(150)
+{
+}
+
 Form::Form(std::string name, int gs, int gex) : _name(name), _sig(false), _gradeSign(gs), _gradeEx(gex)
 {
 	if (gs < 1 || gex < 1)
