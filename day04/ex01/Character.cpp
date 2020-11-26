@@ -52,10 +52,12 @@ void Character::attack(Enemy *enemy)
 	int apcost = _weapon->getAPCost();
 	if (apcost > _ap)
 		return;
-	std::cout << _name << " attacks " << enemy->getType() << " with " << _weapon->getName() << std::endl;
+	std::cout << _name << " attacks " << enemy->getType() << " with a " << _weapon->getName() << std::endl;
 	_weapon->attack();
 	enemy->takeDamage(_weapon->getDamage());
 	_ap -= apcost;
+	if (enemy->getHP() <= 0)
+		delete enemy;
 }
 
 std::string const &Character::getName() const

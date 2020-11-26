@@ -38,8 +38,9 @@ int main(void)
 		Peon *vp = new Peon[3];
 		delete[] vp;
 	}
+	std::cout << std::endl;
 	{
-		std::cout << "Boloss" << std::endl;
+		std::cout << "BOLOSS" << std::endl;
 		Boloss p("Bob");
 		Boloss p2(p);
 		Boloss p3("Dora");
@@ -49,14 +50,19 @@ int main(void)
 		delete[] vp;
 	}
 	std::cout << std::endl << "========== Subject tests ==========" << std::endl;
-	Sorcerer robert("Robert", "the Magnificent");
-	Victim jim("Jimmy");
-	Peon joe("Joe");
-	std::cout << robert << jim << joe;
-	robert.polymorph(jim);
-	robert.polymorph(joe);
+	{
+		Sorcerer robert("Robert", "the Magnificent");
+		Victim jim("Jimmy");
+		Peon joe("Joe");
+		std::cout << robert << jim << joe;
+		robert.polymorph(jim);
+		robert.polymorph(joe);
+	}
 	std::cout << std::endl << "========== My tests ==========" << std::endl;
-	Boloss b("Bob");
-	robert.polymorph(b);
+	{
+		Sorcerer robert("Fanfan", "la Tulipe");
+		Boloss b("Bob");
+		robert.polymorph(b);
+	}
 	return 0;
 }

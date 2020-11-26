@@ -26,6 +26,6 @@ Boloss::~Boloss() {
 
 void Boloss::getPolymorphed() const
 {
-    std::cout << _name << " has been turned into nothing !" << std::endl;
+    std::cout << _name << " has been turned into an even bigger boloss !" << std::endl;
 }
 

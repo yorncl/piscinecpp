@@ -44,6 +44,4 @@ void Enemy::takeDamage(int damage)
 	if (damage < 0)
 		return;
 	_hp -= damage;
-	if (_hp < 0)
-		delete this;
 }
