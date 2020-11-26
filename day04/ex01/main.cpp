@@ -133,6 +133,7 @@ int main()
 		me->attack(s);
 		me->recoverAP();
 		std::cout << *me;
+		delete s;
 		delete me;
 		delete b;
 		delete pr;
