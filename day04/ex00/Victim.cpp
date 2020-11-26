@@ -7,9 +7,9 @@ Victim::Victim()
 }
 
 
-Victim::Victim(std::string n)
+Victim::Victim(std::string name)
 {
-	_name = n;
+	_name = name;
 	std::cout << "Some random victim called " << _name << " just appeared!" << std::endl;
 }
 
