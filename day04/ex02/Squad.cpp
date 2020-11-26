@@ -7,12 +7,10 @@ Squad::Squad()
 
 Squad::Squad(const Squad &s)
 {
-	t_list *ptr = s._list;
-
-	if (ptr)
+	if (s._list)
 		_list = copy_list(s._list);
 	else
-		_list = 0;
+		_list = NULL;
 }
 
 Squad &Squad::operator=(const Squad &s)
@@ -53,23 +51,27 @@ ISpaceMarine *Squad::getUnit(int i) const
 }
 int Squad::push(ISpaceMarine *sm)
 {
+	if (!sm)
+		return getCount();
 	if (!_list)
 	{
 		_list = new t_list();
 		_list->marine = sm;
+		_list->next = NULL;
 		return 1;
 	}
-	t_list *ptr = _list;
-	while (ptr->next)
+	t_list *prev = NULL;
+	t_list *curr = _list;
+	while (curr)
 	{
-		if (ptr->marine == sm)
-		{
+		if (curr->marine == sm)
 			return getCount();
-		}
-		ptr = ptr->next;
+		prev = curr;
+		curr = curr->next;
 	}
-	ptr->next = new t_list();
-	ptr->next->marine = sm;
+	prev->next = new t_list();
+	prev->next->marine = sm;
+	prev->next->next = NULL;
 	return getCount();
 }
 
@@ -77,7 +79,7 @@ int Squad::push(ISpaceMarine *sm)
 t_list *copy_list(t_list *l)
 {
 	if (!l)
-		return 0;
+		return NULL;
 	t_list *newl = new t_list();
 	t_list *ptr = newl;
 	newl->marine = l->marine->clone();
