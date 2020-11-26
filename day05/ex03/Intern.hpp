@@ -20,7 +20,7 @@ public:
 private:
     int resolveName(std::string name);
     Form *createForm(int id, std::string target);
-    static std::string labels[4];
+    static std::string _labels[4];
 };
 
 #endif // INTERN_HPP

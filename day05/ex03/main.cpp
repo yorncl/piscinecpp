@@ -24,6 +24,7 @@ std::cout << std::endl << "======= Intern constructor =======" << std::endl;
 	fabieng = corentaing;
 	Form* nul = fabieng.makeForm("does not exists", "cible");
 	(void) nul;
+	std::cout << nul << std::endl;
 
 std::cout << std::endl << "======= ROBOTOMY =======" << std::endl;
 	Bureaucrat c("Joseph", 10);
@@ -37,7 +38,8 @@ std::cout << std::endl << "======= ROBOTOMY =======" << std::endl;
 	c.executeForm(*f1);
 	c.executeForm(*f1);
 	c.executeForm(*f1);
-	
+	delete f1;
+
 std::cout << std::endl << "======= SHRUBBERY =======" << std::endl;
 	// Form *f2 = new ShrubberyCreationForm("Hi doggy");
 	Form *f2 = fabieng.makeForm("shrubbery creation", "hi doggy");
@@ -46,6 +48,7 @@ std::cout << std::endl << "======= SHRUBBERY =======" << std::endl;
 	c.signForm(*f2);
 	nulos.executeForm(*f2);
 	c.executeForm(*f2);
+	delete f2;
 
 std::cout << std::endl << "======= PRESIDENTIAL =======" << std::endl;
 	// Form *f3 = new PresidentialPardonForm("Le capitalisme");
@@ -57,6 +60,7 @@ std::cout << std::endl << "======= PRESIDENTIAL =======" << std::endl;
 	bob.executeForm(*f3);
 	Bureaucrat chief("Chief", 1);
 	chief.executeForm(*f3);
+	delete f3;
 
 	return 0;
 }

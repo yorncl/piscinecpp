@@ -8,7 +8,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &f) : Form(f._name , f._target, f.gradeSign, f._gradeEx)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &f) : Form(f._name , f._target, f._gradeSign, f._gradeEx)
 {
 }
 

@@ -11,7 +11,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &f
 	return *this;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &f) : Form(f._name , f._target, f.gradeSign, f._gradeEx)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &f) : Form(f._name , f._target, f._gradeSign, f._gradeEx)
 {
 }
 

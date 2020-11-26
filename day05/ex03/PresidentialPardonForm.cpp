@@ -4,7 +4,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("presi
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &f) : Form(f._name , f._target, f.gradeSign, f._gradeEx)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &f) : Form(f._name , f._target, f._gradeSign, f._gradeEx)
 {
 
 }

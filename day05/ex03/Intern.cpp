@@ -1,7 +1,7 @@
 #include "Intern.hpp"
 
 
-std::string Intern::labels[4] = {
+std::string Intern::_labels[4] = {
         "shrubbery creation",
         "presidential pardon",
         "robotomy request",
@@ -28,9 +28,9 @@ int Intern::resolveName(std::string name)
 {
     int i = 0;
     
-    while (!labels[i].empty())
+    while (!_labels[i].empty())
     {
-        if (name.compare(labels[i]) == 0)
+        if (name.compare(_labels[i]) == 0)
             return i;
         i++;
     }
@@ -39,7 +39,7 @@ int Intern::resolveName(std::string name)
 
 Form *Intern::createForm(int id, std::string target)
 {
-    std::cout << "Intern creates " << labels[id] << std::endl;
+    std::cout << "Intern creates " << _labels[id] << std::endl;
     switch (id)
     {
         case 0:
