@@ -9,11 +9,11 @@ class Bureaucrat;
 class Form
 {
 protected:
-	const std::string name;
+	const std::string _name;
 	std::string target;
-	bool sig;
-	const int gradeSign;
-	const int gradeEx;
+	bool _sig;
+	const int _gradeSign;
+	const int _gradeEx;
 
 protected:
 	struct GradeTooHighException : public std::exception
