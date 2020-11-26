@@ -22,7 +22,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &b) : _name(b._name)
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &b)
 {
-	// name is a constant
 	_grade = b._grade;
 	return *this;
 }

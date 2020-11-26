@@ -64,7 +64,7 @@ int main(void)
 	{
 		std::cerr << "This should not print :" << e.what() << '\n';
 	}
-std::cout << "========= inc dec errortest =========" << std::endl;
+std::cout << "========= inc dec error test =========" << std::endl;
 	try
 	{
 		Bureaucrat b("John", 1);
@@ -72,7 +72,7 @@ std::cout << "========= inc dec errortest =========" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "This should print :" << e.what() << '\n';
+		std::cerr << "This should print : " << e.what() << '\n';
 	}
 	try
 	{
@@ -81,7 +81,7 @@ std::cout << "========= inc dec errortest =========" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "This should print :" << e.what() << '\n';
+		std::cerr << "This should print : " << e.what() << '\n';
 	}
 	return 0;
 }

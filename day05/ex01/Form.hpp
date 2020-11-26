@@ -24,7 +24,7 @@ private:
 	};
 public:
 	Form();
-	Form(std::string, int, int);
+	Form(std::string name, int gs, int gex);
 	Form(const Form &);
 	Form &operator=(const Form &);
 	~Form();
