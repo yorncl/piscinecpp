@@ -1,24 +1,29 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string n, int g) : name(n)
+Bureaucrat::Bureaucrat() : _name("default")
+{
+	_grade = 150;
+}
+
+Bureaucrat::Bureaucrat(std::string n, int g) : _name(n)
 {
 	if (g < 1)
 		throw GradeTooHighException();
 	if (g > 150)
 		throw GradeTooLowException();
-	grade = g;
+	_grade = g;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &b) : name(b.name)
+Bureaucrat::Bureaucrat(const Bureaucrat &b) : _name(b._name)
 {
-	grade = b.grade;
+	_grade = b._grade;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &b)
 {
 	// name is a constant
-	grade = b.grade;
+	_grade = b._grade;
 	return *this;
 }
 
@@ -39,29 +44,29 @@ const char * Bureaucrat::GradeTooLowException::what () const throw ()
 
 std::string Bureaucrat::getName() const
 {
-	return name;
+	return _name;
 }
 
 int Bureaucrat::getGrade() const
 {
-	return grade;
+	return _grade;
 }
 
 void Bureaucrat::inc()
 {
-	grade--;
-	if (grade < 1)
+	_grade--;
+	if (_grade < 1)
 		throw GradeTooHighException();
-	if (grade > 150)
+	if (_grade > 150)
 		throw GradeTooLowException();
 }
 
 void Bureaucrat::dec()
 {
-	grade++;
-	if (grade < 1)
+	_grade++;
+	if (_grade < 1)
 		throw GradeTooHighException();
-	if (grade > 150)
+	if (_grade > 150)
 		throw GradeTooLowException();
 }
 

@@ -10,10 +10,10 @@ class Form
 {
 
 private:
-	const std::string name;
-	bool sig;
-	const int gradeSign;
-	const int gradeEx;
+	const std::string _name;
+	bool _sig;
+	const int _gradeSign;
+	const int _gradeEx;
 	struct GradeTooHighException : public std::exception
 	{
 		const char * what () const throw ();

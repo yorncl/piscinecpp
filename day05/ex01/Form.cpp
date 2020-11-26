@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(std::string name, int gs, int gex) : name(name), sig(false), gradeSign(gs), gradeEx(gex)
+Form::Form(std::string name, int gs, int gex) : _name(name), _sig(false), _gradeSign(gs), _gradeEx(gex)
 {
 	if (gs < 1 || gex < 1)
 		throw GradeTooHighException();
@@ -8,9 +8,9 @@ Form::Form(std::string name, int gs, int gex) : name(name), sig(false), gradeSig
 		throw GradeTooLowException();
 }
 
-Form::Form(const Form &f) : name(f.name), gradeSign(f.gradeSign), gradeEx(f.gradeEx)
+Form::Form(const Form &f) : _name(f._name), _gradeSign(f._gradeSign), _gradeEx(f._gradeEx)
 {
-	sig = f.sig;
+	_sig = f._sig;
 }
 
 Form &Form::operator=(const Form &f)
@@ -18,7 +18,7 @@ Form &Form::operator=(const Form &f)
 	// name is a constant
 	// gradeSign is a constant
 	// gradeEx is a constant
-	sig = f.sig;
+	_sig = f._sig;
 	return *this;
 }
 
@@ -39,29 +39,29 @@ const char * Form::GradeTooLowException::what () const throw ()
 
 std::string Form::getName() const
 {
-	return name;
+	return _name;
 }
 
 int Form::getGradeSign() const
 {
-	return gradeSign;
+	return _gradeSign;
 }
 
 int Form::getGradeEx() const
 {
-	return gradeEx;
+	return _gradeEx;
 }
 
 bool Form::getSigned() const
 {
-	return sig;
+	return _sig;
 }
 
 void Form::beSigned(Bureaucrat& b)
 {
-	if (b.getGrade() > gradeSign)
+	if (b.getGrade() > _gradeSign)
 		throw GradeTooLowException();
-	sig = true;
+	_sig = true;
 }
 
 std::ostream &operator<<(std::ostream &os, Form &f)

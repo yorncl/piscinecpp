@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(std::string name, std::string target, int gs, int gex) : name(name), target(target),sig(false), gradeSign(gs), gradeEx(gex)
+Form::Form(std::string name, std::string target, int gs, int gex) : _name(name), target(target),_sig(false), gradeSign(gs), _gradeEx(gex)
 {
 	if (gs < 1 || gex < 1)
 		throw GradeTooHighException();
@@ -8,9 +8,9 @@ Form::Form(std::string name, std::string target, int gs, int gex) : name(name), 
 		throw GradeTooLowException();
 }
 
-Form::Form(const Form &f) : name(f.name), gradeSign(f.gradeSign), gradeEx(f.gradeEx)
+Form::Form(const Form &f) : _name(f._name), gradeSign(f.gradeSign), _gradeEx(f._gradeEx)
 {
-	sig = f.sig;
+	_sig = f._sig;
 }
 
 Form &Form::operator=(const Form &f)
@@ -18,7 +18,7 @@ Form &Form::operator=(const Form &f)
 	// name is a constant
 	// gradeSign is a constant
 	// gradeEx is a constant
-	sig = f.sig;
+	_sig = f._sig;
 	return *this;
 }
 
@@ -43,7 +43,7 @@ const char * Form::NotSignedException::what () const throw ()
 
 std::string Form::getName() const
 {
-	return name;
+	return _name;
 }
 
 int Form::getGradeSign() const
@@ -53,12 +53,12 @@ int Form::getGradeSign() const
 
 int Form::getGradeEx() const
 {
-	return gradeEx;
+	return _gradeEx;
 }
 
 bool Form::getSigned() const
 {
-	return sig;
+	return _sig;
 }
 
 std::string Form::getTarget() const
@@ -70,14 +70,14 @@ void Form::beSigned(Bureaucrat& b)
 {
 	if (b.getGrade() > gradeSign)
 		throw GradeTooLowException();
-	sig = true;
+	_sig = true;
 }
 
 void Form::execute(Bureaucrat const & executor) const
 {
-	if (sig == false)
+	if (_sig == false)
 		throw NotSignedException();
-	if (executor.getGrade() > gradeEx)
+	if (executor.getGrade() > _gradeEx)
 		throw GradeTooLowException();
 }
 
