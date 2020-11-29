@@ -25,13 +25,14 @@ Base *generate(void)
     default:
         break;
     }
+    return NULL;
 }
 
 void identify_from_pointer(Base * p)
 {
     A* a = dynamic_cast<A*>(p);
-    B* b = dynamic_cast<B*>(p);;
-    C* c = dynamic_cast<C*>(p);;
+    B* b = dynamic_cast<B*>(p);
+    C* c = dynamic_cast<C*>(p);
     if (a)
         std::cout << "A" << std::endl;
     if (b)
@@ -42,16 +43,53 @@ void identify_from_pointer(Base * p)
 
 void identify_from_reference( Base & p)
 {
-    Base *p = &p;
-    identify_from_pointer(p);
+    Base *pb = &p;
+    identify_from_pointer(pb);
 }
 
 int main(void)
 {
     srand(time(0));
 
-    Base *test = generate();
+    A a;
+    B b;
+    C c;
 
-    delete test;
+    std::cout << "====== By pointer =====" << std::endl;
+    identify_from_pointer(&a);
+    identify_from_pointer(&b);
+    identify_from_pointer(&c);
+
+    std::cout << "====== By pointer =====" << std::endl;
+    identify_from_reference(a);
+    identify_from_reference(b);
+    identify_from_reference(c);
+
+    std::cout << "====== Generate =====" << std::endl;
+    {
+        Base *test = generate();
+        identify_from_pointer(test);
+        delete test;
+    }
+    {
+        Base *test = generate();
+        identify_from_pointer(test);
+        delete test;
+    }
+    {
+        Base *test = generate();
+        identify_from_pointer(test);
+        delete test;
+    }
+    {
+        Base *test = generate();
+        identify_from_pointer(test);
+        delete test;
+    }
+    {
+        Base *test = generate();
+        identify_from_pointer(test);
+        delete test;
+    }
     return 0;
 }
