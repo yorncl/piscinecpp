@@ -1,80 +1,14 @@
-#include <string>
+#include <string.h>
 #include <iostream>
 #include <cstdio>
 #include <math.h>
+#include <limits.h>
+#include <limits>
+#include <float.h>
 
 
 enum e_type {CHAR, INT, FLOAT, DOUBLE, NONE};
 std::string arr[] = { "char", "int", "float", "none"};
-
-
-static void printFloat(const char* arg, e_type t)
-{
-    float f;
-
-    if (t == CHAR)
-}
-
-static void printInt(const char* arg, e_type t)
-{
-    int i = 0;
-
-    if (t == CHAR)
-        i = static_cast<int>(*arg);
-    else if (t == INT)
-        i = std::atoi(arg);
-    else if (t == FLOAT)
-    {
-        double d = std::atof(arg);
-        i = static_cast<int>(d);
-    }
-    std::cout << "int: " << i << std::endl;
-}
-
-
-static void printChar(const char* arg, e_type t)
-{
-    char c = '\0';
-
-    std::cout << "char: ";
-    if (t == CHAR)
-        c = *arg;
-    else if (t == INT)
-    {
-        int i = std::atoi(arg);
-        c = static_cast<char>(i);
-        if (i < -128 || i > 127)
-        {
-            std::cout << "Out of range" << std::endl;
-            return ;
-        }
-    }
-    else if (t == FLOAT)
-    {
-        float f = std::atof(arg);
-        c = static_cast<char>(f);
-        if (f < -128 || f > 127)
-        {
-            std::cout << "Out of range" << std::endl;
-            return ;
-        }
-    }
-    else if (t == DOUBLE)
-    {
-        double d = std::atof(arg);
-        c = static_cast<char>(d);
-        if (d < -128 || d > 127)
-        {
-            std::cout << "Out of range" << std::endl;
-            return ;
-        }
-    }
-    if (std::isprint(c))
-        std::cout << c << std::endl;
-    else
-        std::cout << "Non displayable" << std::endl;
-}
-
 
 static e_type getType(std::string str)
 {
@@ -92,7 +26,7 @@ static e_type getType(std::string str)
     if (str == "nan" || str == "+inf" || str == "-inf")
         return DOUBLE;
 
-    // INT / DOUBLE / FLOAT pasing
+    // INT / DOUBLE / FLOAT parsing
     size_t i = 0;
     if (str[i] == '-')
         i++;    
@@ -111,26 +45,110 @@ static e_type getType(std::string str)
     return NONE;
 }
 
-int main(int argc, const char** argv) {
+static void printChar(double d)
+{
+    std::cout << "char: ";
+    if (d < CHAR_MIN || d > CHAR_MAX)
+        std::cout << "overflow";
+    else
+    {
+        char c = static_cast<char>(d);
+        if (std::isprint(c))
+            std::cout << c ;
+        else
+            std::cout << "Non displayable";
+    }
+    std::cout << std::endl;
+}
 
+static void printInt(double d)
+{
+    std::cout << "int: ";
+    if (d < INT_MIN || d > INT_MAX)
+        std::cout << "overflow";
+    else
+    {
+        int i = static_cast<int>(d);
+        std::cout << i;
+    }
+    std::cout << std::endl;
+}
 
+static void printFloat(double d)
+{
+    std::cout << "float: ";
+
+    // manage inf
+    if (d < FLT_MIN || d > FLT_MAX )
+        std::cout << "overflow";
+    else
+    {
+        float f = static_cast<float>(d);
+        std::cout.precision(std::numeric_limits<float>::max_digits10);
+        std::cout << f;
+        if (floor(f) == f)
+            std::cout << ".0";
+        std::cout << 'f';
+        
+    }
+    std::cout << std::endl;
+}
+
+static void printDouble(double d)
+{
+    std::cout << "double: " << d << std::endl;
+}
+
+int main(int argc, char** argv)
+{
     if (argc != 2)
     {
         std::cout << "Usage: ./convert [value]" << std::endl;
         std::cout << "Converts value to char, int, float and double " << std::endl;
         return 0;
     }
-    (void) argv;
-    
-    
-    std::string str(argv[1]);
-    e_type t = getType(str);
+    char *str = argv[1];
+
+    // getting type
+    e_type t = getType(std::string(str));
     if (t == NONE)
     {
-        std::cout << "No type matched" << std::endl;
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: impossible" << std::endl;
+        std::cout << "double: impossible" << std::endl;
+        return 0;
     }
-    std::cout << "TYPE == " << arr[t] << std::endl;
-    printChar(argv[1], t);
 
+    // getting value in largest type
+    double d;
+    if (t != CHAR)
+    {
+        d = std::strtod(str, 0);
+        if ((d == HUGE_VALF || d == -HUGE_VALF) && errno == ERANGE)
+        {
+            std::cout << "char: overflow" << std::endl;
+            std::cout << "int: overflow" << std::endl;
+            std::cout << "float: overflow" << std::endl;
+            std::cout << "double: overflow" << std::endl;
+            return 0;
+        }
+    }
+    else
+        d = static_cast<double>(*str);
+    
+    // Printing
+    if (std::isnan(d))
+    {
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+    }
+    else
+    {
+        printChar(d);
+        printInt(d);   
+    }
+    printFloat(d);
+    printDouble(d);
     return 0;
 }
