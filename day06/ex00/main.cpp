@@ -4,6 +4,7 @@
 #include <math.h>
 #include <limits.h>
 #include <limits>
+#include <errno.h>
 #include <float.h>
 
 
@@ -78,26 +79,39 @@ static void printFloat(double d)
 {
     std::cout << "float: ";
 
-    // manage inf
-    if (d < FLT_MIN || d > FLT_MAX )
+    if (std::isnan(d))
+        std::cout << "nanf";
+    else if (d == INFINITY || d == -INFINITY)
+        std::cout << (d < 0 ? "-inff" : "+inff");
+    else if (d < FLT_MIN || d > FLT_MAX )
         std::cout << "overflow";
     else
     {
         float f = static_cast<float>(d);
-        std::cout.precision(std::numeric_limits<float>::max_digits10);
+        std::cout.precision(std::numeric_limits<float>::digits10);
         std::cout << f;
         if (floor(f) == f)
             std::cout << ".0";
         std::cout << 'f';
-        
     }
     std::cout << std::endl;
 }
 
 static void printDouble(double d)
 {
-    std::cout.precision(std::numeric_limits<double>::max_digits10);
-    std::cout << "double: " << d << std::endl;
+    std::cout << "double: ";
+    if (std::isnan(d))
+        std::cout << d;
+    else if (d == INFINITY || d == -INFINITY)
+        std::cout << (d > 0 ? '+' : '\0') << d;
+    else
+    {
+        std::cout.precision(std::numeric_limits<double>::digits10);
+        std::cout << d;
+        if (floor(d) == d)
+                std::cout << ".0";   
+    }
+    std::cout << std::endl;
 }
 
 int main(int argc, char** argv)
@@ -125,7 +139,7 @@ int main(int argc, char** argv)
     double d;
     if (t != CHAR)
     {
-        d = std::strtod(str, 0);
+        d = strtod(str, 0);
         if ((d == HUGE_VALF || d == -HUGE_VALF) && errno == ERANGE)
         {
             std::cout << "char: overflow" << std::endl;
