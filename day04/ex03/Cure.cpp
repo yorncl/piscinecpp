@@ -27,5 +27,5 @@ void Cure::use(ICharacter &target)
 
 Cure* Cure::clone() const
 {
-    return new Cure();
+    return new Cure(*this);
 }

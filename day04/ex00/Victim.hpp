@@ -11,7 +11,7 @@ public:
 	Victim(std::string name);
 	Victim(const Victim &);
 	Victim &operator=(const Victim &);
-	~Victim();
+	virtual ~Victim();
 	std::string getName() const;
 	virtual void getPolymorphed() const;
 protected:

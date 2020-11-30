@@ -15,7 +15,7 @@ public:
 	void battleCry() const;
 	void rangedAttack() const;
 	void meleeAttack() const;
-	~AssaultTerminator();
+	virtual ~AssaultTerminator();
 
 private:
 	

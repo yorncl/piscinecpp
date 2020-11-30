@@ -10,7 +10,7 @@ public:
 	PlasmaRifle();
 	PlasmaRifle(const PlasmaRifle &);
 	PlasmaRifle &operator=(const PlasmaRifle &);
-	~PlasmaRifle();
+	virtual ~PlasmaRifle();
 	void attack() const;
 };
 #endif // PLASMARIFLE_HPP

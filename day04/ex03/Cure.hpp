@@ -10,7 +10,7 @@ public:
     Cure();
     Cure(const Cure &);
     Cure &operator=(const Cure &);
-    ~Cure();
+    virtual ~Cure();
 	void use(ICharacter &target);
     Cure *clone() const;
 

@@ -10,7 +10,7 @@ public:
     Boloss(std::string name);
     Boloss(const Boloss &);
     Boloss &operator=(const Boloss &);
-    ~Boloss();
+    virtual ~Boloss();
 	void getPolymorphed() const;
 
 private:

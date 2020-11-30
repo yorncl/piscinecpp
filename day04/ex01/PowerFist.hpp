@@ -10,7 +10,7 @@ public:
 	PowerFist();
 	PowerFist(const PowerFist &);
 	PowerFist &operator=(const PowerFist &);
-	~PowerFist();
+	virtual ~PowerFist();
 	void attack() const;
 };
 #endif // POWERFIST_HPP

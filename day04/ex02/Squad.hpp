@@ -22,7 +22,7 @@ public:
 	Squad();
 	Squad(const Squad &);
 	Squad &operator=(const Squad &);
-	~Squad();
+	virtual ~Squad();
 	int getCount() const;
 	ISpaceMarine *getUnit(int) const;
 	int push(ISpaceMarine *);

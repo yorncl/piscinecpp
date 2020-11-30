@@ -9,7 +9,7 @@ public:
     Ice();
     Ice(const Ice &);
     Ice &operator=(const Ice &);
-    ~Ice();
+    virtual ~Ice();
 	void use(ICharacter &target);
     Ice *clone() const;
 

@@ -27,5 +27,5 @@ void Ice::use(ICharacter &target)
 
 Ice* Ice::clone() const
 {
-    return new Ice();
+    return new Ice(*this);
 }
