@@ -96,6 +96,7 @@ static void printFloat(double d)
 
 static void printDouble(double d)
 {
+    std::cout.precision(std::numeric_limits<double>::max_digits10);
     std::cout << "double: " << d << std::endl;
 }
 
