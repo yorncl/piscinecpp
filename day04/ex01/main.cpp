@@ -5,6 +5,7 @@
 #include "AWeapon.hpp"
 #include "PlasmaRifle.hpp"
 #include "StormTrooper.hpp"
+#include "Blaster.hpp"
 
 int main()
 {
@@ -59,6 +60,18 @@ int main()
 		std::cout << "b type: " << b.getType() << "  hp: " << b.getHP() << std::endl;
 		std::cout << "c type: " << c.getType() << "  hp: " << c.getHP() << std::endl;
 	}
+	std::cout << std::endl;
+	{
+		std::cout << "STORMTROOPER" << std::endl;
+		StormTrooper a = StormTrooper();
+		a.takeDamage(10);
+		StormTrooper b(a);
+		StormTrooper c = StormTrooper();
+		c = a;
+		std::cout << "a type: " << a.getType() << "  hp: " << a.getHP() << std::endl;
+		std::cout << "b type: " << b.getType() << "  hp: " << b.getHP() << std::endl;
+		std::cout << "c type: " << c.getType() << "  hp: " << c.getHP() << std::endl;
+	}
 
 	std::cout << std::endl;
 	{
@@ -82,18 +95,6 @@ int main()
 		std::cout << "b: " << b.getName() << " " << b.getAPCost() << " " << b.getDamage() << std::endl;
 		std::cout << "a: " << c.getName() << " " << c.getAPCost() << " " << c.getDamage() << std::endl;
 	}
-	std::cout << std::endl;
-	{
-		std::cout << "STORMTROOOPER" << std::endl;
-		StormTrooper a = StormTrooper();
-		StormTrooper b(a);
-		StormTrooper c = StormTrooper();
-		c = a;
-		std::cout << "a: " << a.getName() << " " << a.getAPCost() << " " << a.getDamage() << std::endl;
-		std::cout << "b: " << b.getName() << " " << b.getAPCost() << " " << b.getDamage() << std::endl;
-		std::cout << "a: " << c.getName() << " " << c.getAPCost() << " " << c.getDamage() << std::endl;
-	}
-
 	std::cout << std::endl << "====== Subject Tests ======" << std::endl;
 	{
 		Character *me = new Character("me");
@@ -119,37 +120,75 @@ int main()
 	
 	std::cout << std::endl << "====== My Tests ======" << std::endl;
 	{
+		
+		std::cout << "===== Character" << std::endl;
 		Character *me = new Character("me");
-		std::cout << *me;
-		Enemy *b = new RadScorpion();
 		AWeapon *pr = new PlasmaRifle();
 		AWeapon *pf = new PowerFist();
+		AWeapon *pb = new Blaster();
+		std::cout << *me;
 		me->recoverAP();
 		me->recoverAP();
 		me->recoverAP();
 		me->recoverAP();
 		std::cout << *me;
-		SuperMutant *s = new SuperMutant();
-		me->equip(0);
-		me->attack(s);
-		me->attack(s);
+
+		std::cout << "===== Enemies and Weapons" << std::endl;
+		std::cout << "=== RadScorpion" << std::endl;
+		{
+			Enemy *e = new RadScorpion();
+			me->attack(e);
+			me->equip(0);
+			me->attack(e);
+			me->equip(pr);
+			me->attack(e);
+			delete e;
+		}
+		std::cout << "=== RadScorpion" << std::endl;
+		{
+			Enemy *e = new SuperMutant();
+			me->equip(0);
+			me->attack(e);
+			me->equip(pf);
+			me->attack(e);
+			me->attack(e);
+			delete e;
+		}
+		std::cout << "=== StormTrooper" << std::endl;
+		{
+			std::cout << "=> The empire has landed on Endor !" << std::endl;
+			Enemy *e = new StormTrooper();
+			Character *han = new Character("Han Solo");
+			han->recoverAP();
+			han->recoverAP();
+			han->recoverAP();
+			han->recoverAP();
+			han->attack(e);
+			han->attack(e);
+			han->equip(0);
+			han->attack(e);
+			han->equip(pb);
+			han->attack(e);
+			han->attack(e);
+			han->attack(e);
+			han->attack(e);
+			han->recoverAP();
+			han->recoverAP();
+			han->recoverAP();
+			han->recoverAP();
+			han->recoverAP();
+			han->recoverAP();
+			han->attack(e);
+			han->attack(e);
+			han->attack(e);
+			std::cout << "=> The empire has been vindicated !" << std::endl;
+			delete han; 
+		}
 		std::cout << *me;
-		me->equip(pf);
-		me->attack(s);
-		me->recoverAP();
-		me->attack(s);
-		me->recoverAP();
-		me->equip(pr);
-		me->attack(s);
-		me->recoverAP();
-		me->attack(s);
-		me->recoverAP();
-		std::cout << *me;
-		delete s;
 		delete me;
-		delete b;
 		delete pr;
 		delete pf;
+		delete pb;
 	}
 
 	return 0;
