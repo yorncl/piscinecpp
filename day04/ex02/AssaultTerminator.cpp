@@ -24,7 +24,7 @@ AssaultTerminator::~AssaultTerminator()
 
 ISpaceMarine *AssaultTerminator::clone() const
 {
-	return new AssaultTerminator();	
+	return new AssaultTerminator(*this);
 }
 
 void AssaultTerminator::battleCry() const

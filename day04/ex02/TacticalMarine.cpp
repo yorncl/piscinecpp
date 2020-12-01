@@ -24,7 +24,7 @@ TacticalMarine::~TacticalMarine()
 
 ISpaceMarine *TacticalMarine::clone() const
 {
-	return new TacticalMarine();	
+	return new TacticalMarine(*this);	
 }
 
 void TacticalMarine::battleCry() const
