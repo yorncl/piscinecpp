@@ -4,6 +4,7 @@
 #include "PowerFist.hpp"
 #include "AWeapon.hpp"
 #include "PlasmaRifle.hpp"
+#include "StormTrooper.hpp"
 
 int main()
 {
@@ -76,6 +77,17 @@ int main()
 		PowerFist a = PowerFist();
 		PowerFist b(a);
 		PowerFist c = PowerFist();
+		c = a;
+		std::cout << "a: " << a.getName() << " " << a.getAPCost() << " " << a.getDamage() << std::endl;
+		std::cout << "b: " << b.getName() << " " << b.getAPCost() << " " << b.getDamage() << std::endl;
+		std::cout << "a: " << c.getName() << " " << c.getAPCost() << " " << c.getDamage() << std::endl;
+	}
+	std::cout << std::endl;
+	{
+		std::cout << "STORMTROOOPER" << std::endl;
+		StormTrooper a = StormTrooper();
+		StormTrooper b(a);
+		StormTrooper c = StormTrooper();
 		c = a;
 		std::cout << "a: " << a.getName() << " " << a.getAPCost() << " " << a.getDamage() << std::endl;
 		std::cout << "b: " << b.getName() << " " << b.getAPCost() << " " << b.getDamage() << std::endl;

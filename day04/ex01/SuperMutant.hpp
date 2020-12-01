@@ -7,8 +7,6 @@
 
 class SuperMutant : public Enemy
 {
-private:
-
 public:
 	SuperMutant();
 	SuperMutant(const SuperMutant &);
