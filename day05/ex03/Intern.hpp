@@ -18,9 +18,17 @@ public:
     virtual ~Intern();
     Form *makeForm(std::string type, std::string target);
 private:
-    int resolveName(std::string name);
-    Form *createForm(int id, std::string target);
-    static std::string _labels[4];
+    typedef struct s_pair
+    {
+        std::string name;
+        Form* (*fn)(std::string &target);
+    }       t_pair;
+
+    static t_pair _types[4];
+
+    static Form *createPresidential(std::string &target);
+    static Form *createRobotomy(std::string &target);
+    static Form *createShrubbery(std::string &target);
 };
 
 #endif // INTERN_HPP

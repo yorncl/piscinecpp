@@ -1,11 +1,12 @@
 #include "Intern.hpp"
 
 
-std::string Intern::_labels[4] = {
-        "shrubbery creation",
-        "presidential pardon",
-        "robotomy request",
-        ""
+Intern::t_pair Intern::_types[4] = {
+        {"shrubbery creation", &Intern::createShrubbery},
+        {"presidential pardon", &Intern::createPresidential},
+        {"robotomy request", &Intern::createRobotomy},
+        {"", NULL}
+        
 };
 
 Intern::Intern()
@@ -24,45 +25,31 @@ Intern::~Intern()
 {
 }
 
-int Intern::resolveName(std::string name)
+Form *Intern::createPresidential(std::string &target)
+{
+    return new PresidentialPardonForm(target);
+}
+
+Form *Intern::createRobotomy(std::string &target)
+{
+    return new RobotomyRequestForm(target);
+}
+
+Form *Intern::createShrubbery(std::string &target)
+{
+    return new ShrubberyCreationForm(target);
+}
+
+
+Form *Intern::Intern::makeForm(std::string type, std::string target)
 {
     int i = 0;
-    
-    while (!_labels[i].empty())
+    while (!_types[i].name.empty())
     {
-        if (name.compare(_labels[i]) == 0)
-            return i;
+        if (_types[i].name == type)
+            return _types[i].fn(target);
         i++;
     }
-    return -1;
-}
-
-Form *Intern::createForm(int id, std::string target)
-{
-    std::cout << "Intern creates " << _labels[id] << std::endl;
-    switch (id)
-    {
-        case 0:
-            return new ShrubberyCreationForm(target);
-            break;
-        case 1:
-            return new PresidentialPardonForm(target);
-            break;
-        case 2:
-            return new RobotomyRequestForm(target);
-            break;
-        default:
-            break;
-    }
-    return NULL;
-}
-
-Form *Intern::makeForm(std::string type, std::string target)
-{
-
-    int id = resolveName(type);
-    if (id >= 0)
-        return createForm(id, target);
     std::cout << "The Form has not been found" << std::endl;
     return NULL;
 }  

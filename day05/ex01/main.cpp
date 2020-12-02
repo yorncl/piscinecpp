@@ -81,7 +81,9 @@ int main(void)
 	Form f1("f1", 5, 5);
 	Form f2("f2", 15, 5);
 	Form f3("f2", 10, 5);
-
+	std::cout << f1 << std::endl;
+	std::cout << f2 << std::endl;
+	std::cout << f3 << std::endl;
 	try
 	{
 		b.signForm(f1);
