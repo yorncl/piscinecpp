@@ -12,7 +12,7 @@ public:
 	RobotomyRequestForm(std::string);
 	RobotomyRequestForm(const RobotomyRequestForm &);
 	RobotomyRequestForm &operator=(const RobotomyRequestForm &);
-	~RobotomyRequestForm();
+	virtual ~RobotomyRequestForm();
 	void execute(Bureaucrat const & executor) const;
 };
 

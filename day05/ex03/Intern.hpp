@@ -15,7 +15,7 @@ public:
     Intern();
     Intern(const Intern &);
     Intern &operator=(const Intern &);
-    ~Intern();
+    virtual ~Intern();
     Form *makeForm(std::string type, std::string target);
 private:
     int resolveName(std::string name);

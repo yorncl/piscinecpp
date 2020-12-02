@@ -27,7 +27,7 @@ public:
 	Form(std::string name, int gs, int gex);
 	Form(const Form &);
 	Form &operator=(const Form &);
-	~Form();
+	virtual ~Form();
 	std::string getName() const;
 	int getGradeSign() const;
 	int getGradeEx() const;
