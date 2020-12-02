@@ -16,7 +16,7 @@ int main(void)
 	Bureaucrat bob("Bob", 10);
 	Bureaucrat nulos("Nulos", 150);
 
-std::cout << "===== ROBOTOMY =======" << std::endl;
+	std::cout << "===== ROBOTOMY =======" << std::endl;
 	Bureaucrat c("Joseph", 10);
 	Form *f1 = new RobotomyRequestForm("CIBLE");
 	c.executeForm(*f1);
@@ -28,8 +28,9 @@ std::cout << "===== ROBOTOMY =======" << std::endl;
 	c.executeForm(*f1);
 	c.executeForm(*f1);
 	delete f1;
+	std::cout << std::endl;
 	
-std::cout << "===== SHRUBBERY =======" << std::endl;
+	std::cout << "===== SHRUBBERY =======" << std::endl;
 	Form *f2 = new ShrubberyCreationForm("Hi doggy");
 	bob.executeForm(*f2);
 	nulos.signForm(*f2);
@@ -37,8 +38,9 @@ std::cout << "===== SHRUBBERY =======" << std::endl;
 	nulos.executeForm(*f2);
 	c.executeForm(*f2);
 	delete f2;
+	std::cout << std::endl;
 
-std::cout << "===== PRESIDENTIAL =======" << std::endl;
+	std::cout << "===== PRESIDENTIAL =======" << std::endl;
 	Form *f3 = new PresidentialPardonForm("Le capitalisme");
 	bob.executeForm(*f3);
 	nulos.signForm(*f3);
