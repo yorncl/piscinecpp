@@ -182,9 +182,9 @@ int main()
 			han->attack(e);
 			han->attack(e);
 			std::cout << "=> The empire has been vindicated !" << std::endl;
+			std::cout << *han;
 			delete han; 
 		}
-		std::cout << *me;
 		delete me;
 		delete pr;
 		delete pf;
