@@ -140,16 +140,20 @@ int main()
             delete a;
         }
         {
+
             std::cout << "CLONING" << std::endl;
+            Character c = Character("dummy");
             AMateria *m;
             AMateria *test;
             m = new Ice();
+            m->use(c);
             test = m->clone();
             std::cout << "Should be ice: " << test->getType() << " with xp " << test->getXP() << std::endl;
             std::cout << test << " vs " << m << std::endl;
             delete m;
             delete test;
             m = new Cure();
+            m->use(c);
             test = m->clone();
             std::cout << "Should be cure: " << test->getType() << " with xp " << test->getXP() << std::endl;
             std::cout << test << " vs " << m << std::endl;
