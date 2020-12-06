@@ -9,7 +9,6 @@
 
 
 enum e_type {CHAR, INT, FLOAT, DOUBLE, NONE};
-std::string arr[] = { "char", "int", "float", "none"};
 
 static e_type getType(std::string str)
 {
