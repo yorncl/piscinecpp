@@ -2,7 +2,6 @@
 #include <iostream>
 #include <cstdio>
 #include <math.h>
-#include <limits.h>
 #include <limits>
 #include <errno.h>
 #include <float.h>
@@ -48,7 +47,7 @@ static e_type getType(std::string str)
 static void printChar(double d)
 {
     std::cout << "char: ";
-    if (d < CHAR_MIN || d > CHAR_MAX)
+    if (d < -std::numeric_limits<char>::max() || d > std::numeric_limits<char>::max())
         std::cout << "overflow";
     else
     {
@@ -64,7 +63,7 @@ static void printChar(double d)
 static void printInt(double d)
 {
     std::cout << "int: ";
-    if (d < INT_MIN || d > INT_MAX)
+    if (d < -std::numeric_limits<int>::max() || d > std::numeric_limits<int>::max())
         std::cout << "overflow";
     else
     {
@@ -82,7 +81,7 @@ static void printFloat(double d)
         std::cout << "nanf";
     else if (d == INFINITY || d == -INFINITY)
         std::cout << (d < 0 ? "-inff" : "+inff");
-    else if (d < FLT_MIN || d > FLT_MAX )
+    else if (d < -std::numeric_limits<float>::max() || d > std::numeric_limits<float>::max())
         std::cout << "overflow";
     else
     {
