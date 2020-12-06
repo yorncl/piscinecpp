@@ -1,6 +1,5 @@
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
-
 NAME = a.out
 
 HEADERS = Data.hpp

@@ -59,11 +59,12 @@ int main(void)
 {
     srand(time(0));
 
-    Data *data =  deserialize(serialize()); // check leaks
+    Data *data =  deserialize(serialize());
     std::cout << "==== SERIALIZED THEN DESERIALIZEDD DATA ====" << std::endl;
     std::cout << data->s1 << std::endl;
     std::cout << data->n << std::endl;
     std::cout << data->s2 << std::endl;
     std::cout << "==== Size of \"Data\" ====" << std::endl;
     std::cout << sizeof(Data) << std::endl;
+    delete data;
 }
