@@ -1,14 +1,14 @@
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 
-NAME = convert
+NAME = a.out
 
 HEADERS = Data.hpp
 SRCS =  main.cpp
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
+$(NAME): $(SRCS) $(HEADERS)
 	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) 
 
 clean:
