@@ -38,6 +38,8 @@ int main(void)
     std::cout << data->n << std::endl;
     std::cout << data->s2 << std::endl;
     std::cout << "==== Size of \"Data\" ====" << std::endl;
-    std::cout << sizeof(Data) << std::endl;
+    std::cout << "sizeof string: " << sizeof(std::string) << std::endl;
+    std::cout << "sizeof int: " << sizeof(int) << std::endl;
+    std::cout << "sizeof Data: " << sizeof(Data) << std::endl;
     delete data;
 }
