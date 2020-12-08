@@ -6,7 +6,6 @@
 #include <errno.h>
 #include <float.h>
 
-
 enum e_type {CHAR, INT, FLOAT, DOUBLE, NONE};
 
 static e_type getType(std::string str)
@@ -47,7 +46,7 @@ static e_type getType(std::string str)
 static void printChar(double d)
 {
     std::cout << "char: ";
-    if (d < -std::numeric_limits<char>::max() || d > std::numeric_limits<char>::max())
+    if (d < std::numeric_limits<char>::min() || d > std::numeric_limits<char>::max())
         std::cout << "overflow";
     else
     {
@@ -63,7 +62,7 @@ static void printChar(double d)
 static void printInt(double d)
 {
     std::cout << "int: ";
-    if (d < -std::numeric_limits<int>::max() || d > std::numeric_limits<int>::max())
+    if (d < std::numeric_limits<int>::min() || d > std::numeric_limits<int>::max())
         std::cout << "overflow";
     else
     {
