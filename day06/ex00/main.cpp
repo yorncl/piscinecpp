@@ -150,7 +150,7 @@ int main(int argc, char** argv)
         d = static_cast<double>(*str);
     
     // Printing
-    if (std::isnan(d))
+    if (d != d)
     {
         std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
