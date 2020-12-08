@@ -41,10 +41,38 @@ void identify_from_pointer(Base * p)
         std::cout << "C" << std::endl;
 }
 
-void identify_from_reference( Base & p)
+void identify_from_reference(Base & p)
 {
-    Base *pb = &p;
-    identify_from_pointer(pb);
+    try
+    {
+        A& a = dynamic_cast<A&>(p);
+        std::cout << "A" << std::endl;
+        (void) a;
+    }
+    catch(const std::exception& e)
+    {
+        (void) e;
+    }
+    try
+    {
+        B& b = dynamic_cast<B&>(p);
+        std::cout << "B" << std::endl;
+        (void) b;
+    }
+    catch(const std::exception& e)
+    {
+        (void) e;
+    }
+    try
+    {
+        C& c = dynamic_cast<C&>(p);
+        std::cout << "C" << std::endl;
+        (void) c;
+    }
+    catch(const std::exception& e)
+    {
+        (void) e;
+    }
 }
 
 int main(void)
@@ -60,7 +88,7 @@ int main(void)
     identify_from_pointer(&b);
     identify_from_pointer(&c);
 
-    std::cout << "====== By pointer =====" << std::endl;
+    std::cout << "====== By reference =====" << std::endl;
     identify_from_reference(a);
     identify_from_reference(b);
     identify_from_reference(c);
