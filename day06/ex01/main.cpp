@@ -1,10 +1,3 @@
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <string.h>
-#include <time.h>
-#include <cstdlib>
-
 #include "Data.hpp"
 
 void *serialize(void)

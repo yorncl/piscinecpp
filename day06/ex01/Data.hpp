@@ -1,7 +1,12 @@
 #if !defined(DATA_HPP)
 #define DATA_HPP
 
+#include <iostream>
+#include <sstream>
 #include <string>
+#include <string.h>
+#include <time.h>
+#include <cstdlib>
 
 #pragma pack(push, 1)
 
