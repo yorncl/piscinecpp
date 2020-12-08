@@ -76,7 +76,7 @@ static void printFloat(double d)
 {
     std::cout << "float: ";
 
-    if (std::isnan(d))
+    if (d != d)
         std::cout << "nanf";
     else if (d == INFINITY || d == -INFINITY)
         std::cout << (d < 0 ? "-inff" : "+inff");
@@ -97,7 +97,7 @@ static void printFloat(double d)
 static void printDouble(double d)
 {
     std::cout << "double: ";
-    if (std::isnan(d))
+    if (d != d)
         std::cout << d;
     else if (d == INFINITY || d == -INFINITY)
         std::cout << (d > 0 ? '+' : '\0') << d;
