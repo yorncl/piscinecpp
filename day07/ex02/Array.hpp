@@ -32,8 +32,6 @@ Array<T>::Array(unsigned int size)
 {
     _size = size;
     _arr = new T[_size];
-    for (size_t i = 0; i < _size; i++)
-        _arr[i] = 0;
 }
 
 template<typename T>
@@ -76,6 +74,5 @@ Array<T>::~Array()
 {
     delete[] _arr;
 }
-
 
 #endif // ARRAY_HPP
