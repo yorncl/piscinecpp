@@ -23,7 +23,9 @@ int main(void)
     {
         std::cout << "======== Size ========" << std::endl;
         Array<int> a(52);
+        std::cout << "Size of a:" << std::endl;
         std::cout << a.size() << std::endl;
+        std::cout << "Size of b:" << std::endl;
         Array<int> b = Array<int>();
         std::cout << b.size() << std::endl;
     }
@@ -31,8 +33,10 @@ int main(void)
     {
         std::cout << "======== Exceptions ========" << std::endl;
         Array<int> a(52);
+        a[51] = 666;
         try
         {
+            std::cout << "Trying to access index 52:" << std::endl;
             std::cout << a[52] << std::endl;
         }
         catch(const std::exception& e)
@@ -41,6 +45,7 @@ int main(void)
         }
         try
         {
+            std::cout << "Trying to access index -51:" << std::endl;
             std::cout << a[-51] << std::endl;
         }
         catch(const std::exception& e)
@@ -49,6 +54,7 @@ int main(void)
         }
         try
         {
+            std::cout << "Trying to access index 51:" << std::endl;
             std::cout << a[51] << std::endl;
         }
         catch(const std::exception& e)

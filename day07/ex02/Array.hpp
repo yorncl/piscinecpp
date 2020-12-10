@@ -12,11 +12,11 @@ private:
 
 public:
     Array();
-    Array(unsigned int size);
+    Array(unsigned int n);
     Array(const Array &a);
     Array &operator=(const Array &a);
     T &operator[](unsigned int i);
-    size_t size();
+    size_t size() const;
     virtual ~Array();    
 };
 
@@ -24,13 +24,13 @@ template<typename T>
 Array<T>::Array()
 {
     _size = 0;
-    _arr = NULL;
+    _arr = new T[0];
 }
 
 template<typename T>
-Array<T>::Array(unsigned int size)
+Array<T>::Array(unsigned int n)
 {
-    _size = size;
+    _size = n;
     _arr = new T[_size];
 }
 
@@ -64,7 +64,7 @@ T& Array<T>::operator[](unsigned int i)
 }
 
 template<typename T>
-size_t Array<T>::size()
+size_t Array<T>::size() const
 {
     return _size;
 }
