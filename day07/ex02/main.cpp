@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Array.hpp"
+#include <string>
 
 int main(void)
 {
@@ -22,18 +23,18 @@ int main(void)
     std::cout << std::endl;
     {
         std::cout << "======== Size ========" << std::endl;
-        Array<int> a(52);
+        Array<std::string> a(52);
         std::cout << "Size of a:" << std::endl;
         std::cout << a.size() << std::endl;
         std::cout << "Size of b:" << std::endl;
-        Array<int> b = Array<int>();
+        Array<std::string> b = Array<std::string>();
         std::cout << b.size() << std::endl;
     }
     std::cout  << std::endl;
     {
         std::cout << "======== Exceptions ========" << std::endl;
-        Array<int> a(52);
-        a[51] = 666;
+        Array<float> a(52);
+        a[51] = 666.666f;
         try
         {
             std::cout << "Trying to access index 52:" << std::endl;
