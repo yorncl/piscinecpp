@@ -8,7 +8,6 @@ void printT(T &t)
     std::cout << "T: " << t << std::endl;
 }
 
-
 static void printS(std::string &s)
 {
     std::cout << "String: " << s << std::endl;
