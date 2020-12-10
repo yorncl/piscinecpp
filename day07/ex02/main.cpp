@@ -12,9 +12,9 @@ int main(void)
         Array<int> b(a);
         Array<int> c(45);
         c = a;
-        a[0] = 666;
-        a[1] = 666;
-        a[2] = 666;
+        a[0] = 6;
+        a[1] = 6;
+        a[2] = 6;
         std::cout << "arr a: " << a[0] << " " << a[1] << " " << a[2] << " " << std::endl;
         std::cout << "arr b: " << b[0] << " " << b[1] << " " << b[2] << " " << std::endl;
         std::cout << "arr c: " << c[0] << " " << c[1] << " " << c[2] << " " << std::endl;
@@ -34,6 +34,14 @@ int main(void)
         try
         {
             std::cout << a[52] << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+        try
+        {
+            std::cout << a[-51] << std::endl;
         }
         catch(const std::exception& e)
         {

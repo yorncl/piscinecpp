@@ -4,12 +4,9 @@
 template<typename T>
 void swap(T &a, T &b)
 {
-    T *p1 = &a;
-    T *p2 = &b;
     T tmp = a;
-    
-    *p1 = *p2;
-    *p2 = tmp;
+    a = b;
+    b = tmp;   
 }
 
 template <typename T>

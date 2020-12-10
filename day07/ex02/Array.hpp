@@ -18,7 +18,6 @@ public:
         _arr = new T[_size];
         for (size_t i = 0; i < _size; i++)
             _arr[i] = 0;
-        
     }
     Array(const Array &a)
     {
