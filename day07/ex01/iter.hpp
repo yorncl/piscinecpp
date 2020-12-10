@@ -4,7 +4,7 @@
 #include <cstdlib>
 
 template<typename T>
-void iter(T* arr, size_t size, void (*func)(T& elem))
+void iter(T* arr, size_t size, void (&func)(T& elem))
 {
     for (size_t i = 0; i < size; i++)
     {
