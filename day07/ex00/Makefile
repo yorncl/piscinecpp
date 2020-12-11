@@ -3,8 +3,8 @@ CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 NAME = a.out
 
-SRCS =  main.cpp
-HEADERS = whatever.hpp
+SRCS =  main.cpp ComplexType.cpp
+HEADERS = whatever.hpp ComplexType.hpp
 
 all: $(NAME)
 
