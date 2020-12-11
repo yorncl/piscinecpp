@@ -3,17 +3,17 @@
 #include "iter.hpp"
 
 template<typename T>
-void printT(T &t)
+void printT(const T &t)
 {
     std::cout << "T: " << t << std::endl;
 }
 
-static void printS(std::string &s)
+static void printS(const std::string &s)
 {
     std::cout << "String: " << s << std::endl;
 }
 
-static void printI(int &i)
+static void printI(const int &i)
 {
     std::cout << "Int: " << i << std::endl;
 }
