@@ -7,38 +7,70 @@ Span::Span()
 
 Span::Span(unsigned int n)
 {
-    _max_n = 0;
+    _max_n = n;
 }
 
-Span::Span(const Span &)
+Span::Span(const Span &s)
 {
+    _max_n = s._max_n;
+    _s = s._s;
 }
 
 Span &Span::operator=(const Span &s)
 {
     _max_n = s._max_n;
-    _v = s._v;
-    return *this;   
+    _s = s._s;
+    return *this;
 }
 
 Span::~Span()
 {   
 }
 
-void    Span::addNumber()
+void    Span::addNumber(int n)
 {
-
-}
-int     Span::shortestSpan()
-{
-    std::min_element()
-}
-int     Span::longestSpan()
-{
-
+    if (_s.size() < _max_n)
+        _s.insert(n);
+    else
+        throw SpanFullException();
 }
 
-const char * Span::Full::what() throw()
+unsigned int     Span::shortestSpan()
 {
-    return "N reached";
+    if (_s.size() <= 1)
+        throw NotEnoughElements();
+    
+    std::set<int>::iterator curr = _s.begin();
+    std::set<int>::iterator next = ++_s.begin();
+    unsigned int min = *next - *curr;
+    for (size_t i = 0; i < _s.size() - 1; i++)
+    {
+        unsigned int tmp = *next - *curr;
+        if (tmp < min)
+            min = tmp;
+        curr++;
+        next++;
+    }
+    return min;
+
+}
+
+unsigned int     Span::longestSpan()
+{
+    if (_s.size() <= 1)
+        throw NotEnoughElements();
+    std::set<int>::iterator min = std::min_element(_s.begin(), _s.end());
+    std::set<int>::iterator max = std::max_element(_s.begin(), _s.end());
+
+    return *max - *min;
+}
+
+const char * Span::SpanFullException::what() const throw()
+{
+    return "The Span is full";
+}
+
+const char * Span::NotEnoughElements::what() const throw()
+{
+    return "Not enough elements";
 }
