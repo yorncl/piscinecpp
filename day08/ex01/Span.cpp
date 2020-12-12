@@ -42,7 +42,7 @@ unsigned int     Span::shortestSpan()
     
     std::set<int>::iterator curr = _s.begin();
     std::set<int>::iterator next = ++_s.begin();
-    unsigned int min = *next - *curr;
+    unsigned int min = UINT_MAX;
     for (size_t i = 0; i < _s.size() - 1; i++)
     {
         unsigned int tmp = *next - *curr;

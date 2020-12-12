@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <set>
+#include "limits.h"
 
 class Span
 {

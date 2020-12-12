@@ -7,7 +7,7 @@
 
 int main(void)
 {
-    std::cout << "===== Lists =====" << std::endl;
+    std::cout << std::endl << "===== Lists =====" << std::endl;
     std::cout << "== Error" << std::endl;
     {
         std::list<int> l(10, 15); // create list of 10 elemts at value 15
@@ -55,7 +55,7 @@ int main(void)
         std::cout << "found r = " << r << std::endl;
     }
 
-    std::cout << "===== Vector =====" << std::endl;
+    std::cout << std::endl << "===== Vector =====" << std::endl;
     std::cout << "== Error" << std::endl;
     {
         std::vector<int> v(10, 15);
@@ -104,7 +104,7 @@ int main(void)
     }
  
  
-    std::cout << "===== Set =====" << std::endl;
+    std::cout << std::endl << "===== Set =====" << std::endl;
     std::cout << "== Error" << std::endl;
     {
         std::set<int> s;
