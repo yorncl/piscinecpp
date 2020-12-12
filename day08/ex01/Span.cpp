@@ -35,6 +35,17 @@ void    Span::addNumber(int n)
         throw SpanFullException();
 }
 
+void    Span::addNumber(int low, int high)
+{
+    for (int i = low; i < high; i++)
+    {
+        if (_s.size() < _n)
+            _s.insert(i);
+        else
+            throw SpanFullException();
+    }
+}
+
 unsigned int     Span::shortestSpan() const
 {
     if (_s.size() <= 1)

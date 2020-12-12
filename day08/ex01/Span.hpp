@@ -22,6 +22,7 @@ public:
     Span &operator=(const Span &);
     virtual ~Span();
     void addNumber(int);
+    void addNumber(int low, int high);
     unsigned int shortestSpan() const;
     unsigned int longestSpan() const;
 private:
