@@ -2,23 +2,23 @@
 
 Span::Span()
 {
-    _max_n = 0;
+    _n = 0;
 }
 
 Span::Span(unsigned int n)
 {
-    _max_n = n;
+    _n = n;
 }
 
 Span::Span(const Span &s)
 {
-    _max_n = s._max_n;
+    _n = s._n;
     _s = s._s;
 }
 
 Span &Span::operator=(const Span &s)
 {
-    _max_n = s._max_n;
+    _n = s._n;
     _s = s._s;
     return *this;
 }
@@ -29,7 +29,7 @@ Span::~Span()
 
 void    Span::addNumber(int n)
 {
-    if (_s.size() < _max_n)
+    if (_s.size() < _n)
         _s.insert(n);
     else
         throw SpanFullException();

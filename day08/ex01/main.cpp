@@ -17,7 +17,7 @@ int main(void)
     std::cout << "===== My tests =====" << std::endl;
     {
         std::cout << "=== Errors" << std::endl;
-        Span sp = Span(5);
+        Span sp = Span(2);
         try
         {
             sp.shortestSpan();
@@ -31,6 +31,20 @@ int main(void)
         try
         {
             sp.longestSpan();
+        }
+        catch(const std::exception& e)
+        {
+            std::cout << "-> Exception catched" << std::endl;
+            std::cerr << e.what() << '\n';
+        }
+        try
+        {
+            sp.addNumber(1);
+            sp.addNumber(1);
+            sp.addNumber(1);
+            sp.addNumber(1);
+            sp.addNumber(1);
+            sp.addNumber(1);
         }
         catch(const std::exception& e)
         {

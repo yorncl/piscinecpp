@@ -25,7 +25,7 @@ public:
     unsigned int shortestSpan();
     unsigned int longestSpan();
 private:
-    size_t _max_n;
+    unsigned int _n;
     std::set<int> _s;
 };
 
