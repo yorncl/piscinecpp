@@ -35,7 +35,7 @@ void    Span::addNumber(int n)
         throw SpanFullException();
 }
 
-unsigned int     Span::shortestSpan()
+unsigned int     Span::shortestSpan() const
 {
     if (_s.size() <= 1)
         throw NotEnoughElements();
@@ -55,7 +55,7 @@ unsigned int     Span::shortestSpan()
 
 }
 
-unsigned int     Span::longestSpan()
+unsigned int     Span::longestSpan() const
 {
     if (_s.size() <= 1)
         throw NotEnoughElements();
