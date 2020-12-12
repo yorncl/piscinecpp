@@ -82,6 +82,27 @@ int main(void)
         std::cout << "shortest: " << sp.shortestSpan() << std::endl;
         std::cout << "longest : " << sp.longestSpan() << std::endl;
     }
+    {
+        std::cout << "=== Reel numbers range" << std::endl;
+        Span sp = Span(5);
+        std::cout << "-> {-40, -50 , 45}" << std::endl;
+        sp.addNumber(-40);
+        sp.addNumber(-50);
+        sp.addNumber(45);
+        std::cout << "shortest: " << sp.shortestSpan() << std::endl;
+        std::cout << "longest : " << sp.longestSpan() << std::endl;
+    }
+    {
+        std::cout << "=== Fat tests" << std::endl;
+        Span sp = Span(10000);
+        std::cout << "-> {-5000, -4999, ... , 4998, 4999}" << std::endl;
+        for (int i = -5000; i < 5000; i++)
+        {
+            sp.addNumber(i);
+        }
+        std::cout << "shortest: " << sp.shortestSpan() << std::endl;
+        std::cout << "longest : " << sp.longestSpan() << std::endl;
+    }
 
     return 0;
 }
